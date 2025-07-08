@@ -1,6 +1,7 @@
 site_name: EUD Lab
-repo_url: https://github.com/saebyeok0306/mkdocs-test
-copyright: Copyright &copy; 2025 saebyeok0306. All rights reserved.
+repo_url: https://github.com/saebyeok0306/EUD-Lab
+repo_name: EUD-Lab
+copyright: Copyright &copy; 2025 saebyeok0306 All rights reserved.
 edit_uri: edit/main/docs/
 
 # nav:
@@ -27,6 +28,38 @@ theme:
   icon:
     edit: material/pencil 
     view: material/eye
+    repo: fontawesome/brands/github
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: JetBrains Mono
 
 plugins:
   - blog:
@@ -53,17 +86,12 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/bluesky
-      link: https://bsky.app/profile/squidfunk.bsky.social
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/squidfunk
+      link: https://github.com/saebyeok0306
+    - icon: fontawesome/solid/mug-saucer
+      link: https://cafe.naver.com/edac
 
 extra_css:
   - stylesheets/extra.css
+
+markdown_extensions:
+  - tables

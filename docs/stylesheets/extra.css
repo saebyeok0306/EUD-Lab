@@ -1,9 +1,18 @@
 .md-header {
-    background-color: cadetblue;
 }
 
 .md-container {
     .md-tabs {
-        background-color:cadetblue;
     }
+}
+
+/*:root  > * {*/
+/*  --md-primary-fg-color: #000000;*/
+/*  --md-primary-fg-color--light: #950000;*/
+/*  --md-primary-fg-color--dark: #e1353f;*/
+/*}*/
+
+.md-search__form {
+    border-radius: 15px;
+    background-color: #202020;
 }
