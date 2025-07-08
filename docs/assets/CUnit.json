@@ -1,0 +1,195 @@
+{
+	"header": [
+        "offset",
+        "type",
+        "name",
+        "description"
+    ],
+	"content": [
+		{"offset": "0x000", "type": "BW::CUnit*", "name": "prev", "description": "이전에 생성될 유닛의 구조 오프셋을 가리키는 포인터 (일종의 연결리스트)"},
+		{"offset": "0x004", "type": "BW::CUnit*", "name": "next", "description": "다음에 생성될 유닛의 구조 오프셋을 가리키는 포인터 (일종의 연결리스트)"},
+		{"offset": "0x008", "type": "s32", "name": "hitPoints", "description": "현재 체력 (*256 되어있음)"},
+		{"offset": "0x00C", "type": "BW::CSprite*", "name": "sprite", "description": "CSprite의 주소"},
+		{"offset": "0x010", "type": "BW::Target", "name": "moveTargetXY", "description": "이동 지점의 x,y좌표(각 2바이트)"},
+		{"offset": "0x014", "type": "BW::Target", "name": "moveTarget", "description": "따라가는 대상의 구조오프셋(4바이트)"},
+		{"offset": "0x020", "type": "u8", "name": "movementFlags", "description": "움직임 상태 (가속중, 이동중, 감속중 등)"},
+		{"offset": "0x021", "type": "u8", "name": "currentDirection1", "description": "바라보는 방향"},
+		{"offset": "0x022", "type": "u8", "name": "flingyTurnRadius", "description": "회전반경"},
+		{"offset": "0x023", "type": "u8", "name": "velocityDirection1", "description": "움직이는 방향"},
+		{"offset": "0x024", "type": "u16", "name": "flingyID", "description": "비행 정보 ID"},
+		{"offset": "0x026", "type": "u8", "name": "_unknown_0x026", "description": ""},
+		{"offset": "0x027", "type": "u8", "name": "flingyMovementType", "description": "이동 제어"},
+		{"offset": "0x028", "type": "BW::Position", "name": "position", "description": "현재 위치 x,y좌표(각 2바이트). 강제로 값을 바꾸면 유닛이 고장남"},
+		{"offset": "0x02C", "type": "point", "name": "halt", "description": "position과 다른 위치 정보 (정확히 알려진게 없음). 값을 바꿔도 유닛이 고장나지 않음"},
+		{"offset": "0x034", "type": "u32", "name": "flingyTopSpeed", "description": "최고 속도"},
+		{"offset": "0x038", "type": "s32", "name": "current_speed1", "description": "현재 속도1"},
+		{"offset": "0x03C", "type": "s32", "name": "current_speed2", "description": "현재 속도2"},
+		{"offset": "0x040", "type": "point", "name": "current_speedXY", "description": ""},
+		{"offset": "0x040", "type": "point", "name": "current_speedX", "description": "수평방향 속도 (음수값은 2의 보수 형태로 표현됨)"},
+		{"offset": "0x044", "type": "point", "name": "current_speedY", "description": "수직방향 속도 (음수값은 2의 보수 형태로 표현됨)"},
+		{"offset": "0x048", "type": "u16", "name": "flingyAcceleration", "description": "가속도"},
+		{"offset": "0x04C", "type": "u8", "name": "playerID", "description": "플레이어 ID"},
+		{"offset": "0x04D", "type": "u8", "name": "orderID", "description": "명령 ID"},
+		{"offset": "0x04E", "type": "u8", "name": "orderState", "description": "명령 상태"},
+		{"offset": "0x04F", "type": "u8", "name": "orderSignal", "description": "명령 신호"},
+		{"offset": "0x050", "type": "u16", "name": "orderUnitType", "description": "전장의 안개 속 유닛이 공격 대상일경우 175, 일반적인 유닛일경우 228"},
+		{"offset": "0x054", "type": "u8", "name": "mainOrderTimer", "description": "현재 명령의 남은 시간 (미네랄, 가스 채취 시간)"},
+		{"offset": "0x055", "type": "u8", "name": "groundWeaponCooldown", "description": "지상 무기 쿨타임 (0일때 공격 가능)"},
+		{"offset": "0x056", "type": "u8", "name": "airWeaponCooldown", "description": "공중 무기 쿨타임"},
+		{"offset": "0x057", "type": "u8", "name": "spellCooldown", "description": "마법 쿨타임"},
+		{"offset": "0x058", "type": "BW::Target", "name": "orderTargetXY", "description": "명령 대상 x,y좌표(각 2바이트)"},
+		{"offset": "0x05C", "type": "BW::CUnit*", "name": "orderTarget", "description": "명령 대상의 구조오프셋"},
+		{"offset": "0x060", "type": "u32", "name": "shieldPoints", "description": "쉴드 (*256 되어있음)"},
+		{"offset": "0x064", "type": "u16", "name": "unitType", "description": "유닛 번호(종류)"},
+		{"offset": "0x068", "type": "BW::CUnit*", "name": "previousPlayerUnit", "description": "prev (아군 유닛 중에서만)"},
+		{"offset": "0x06C", "type": "BW::CUnit*", "name": "nextPlayerUnit", "description": "next (아군 유닛 중에서만)"},
+		{"offset": "0x070", "type": "BW::CUnit*", "name": "subUnit", "description": "부가 유닛 구조오프셋"},
+		{"offset": "0x07C", "type": "BW::CUnit*", "name": "autoTargetUnit", "description": "피격시 자동으로 공격할 유닛의 구조오프셋"},
+		{"offset": "0x080", "type": "BW::CUnit*", "name": "connectedUnit", "description": "연결된 유닛 (라바의 주인 건물, 건설중인 테란 건물의 SCV, 애드온의 주인 건물, 탑승한 수송선/벙커 등)"},
+		{"offset": "0x084", "type": "u8", "name": "orderQueueCount", "description": "예약 명령 수"},
+		{"offset": "0x085", "type": "u8", "name": "orderQueueTimer", "description": "예약 명령 타이머, 행동 불가(락다운 등) 상태의 유닛은 숫자가 변하지 않음."},
+		{"offset": "0x086", "type": "u8", "name": "_unknown_0x086", "description": ""},
+		{"offset": "0x087", "type": "u8", "name": "attackNotifyTimer", "description": "피격 경고음(\"아군이 공격받고 있습니다\" 쿨타임)"},
+		{"offset": "0x08E", "type": "u8", "name": "rankIncrease", "description": "계급 증가량 (??)"},
+		{"offset": "0x08F", "type": "u8", "name": "killCount", "description": "킬 수"},
+		{"offset": "0x090", "type": "u8", "name": "lastAttackingPlayer", "description": "마지막으로 이 유닛을 공격한 플레이어 (아군 제외)"},
+		{"offset": "0x091", "type": "u8", "name": "secondaryOrderTimer", "description": "???"},
+		{"offset": "0x092", "type": "u8", "name": "AIActionFlag", "description": "AI 내에서만 사용"},
+		{"offset": "0x093", "type": "u8", "name": "userActionFlags", "description": "유저 행동 플래그"},
+		{"offset": "0x094", "type": "u16", "name": "currentButtonSet", "description": "현재 버튼셋"},
+		{"offset": "0x096", "type": "bool", "name": "isCloaked", "description": "클로킹 여부"},
+		{"offset": "0x097", "type": "u8", "name": "movementState", "description": "움직임 상태"},
+		{"offset": "0x098", "type": "u16", "name": "buildQueue[5]", "description": "생산 대기열에서 생산중인 유닛의 구조오프셋"},
+		{"offset": "0x0A2", "type": "u16", "name": "energy", "description": "마나 (*256 되어있음)"},
+		{"offset": "0x0A4", "type": "u8", "name": "buildQueueSlot", "description": "다음 사용할 생산 대기열 번호"},
+		{"offset": "0x0A5", "type": "u8", "name": "uniquenessIdentifier", "description": "현재 유닛을 구별하는데 사용된 바이트 수 (?)"},
+		{"offset": "0x0A6", "type": "u8", "name": "secondaryOrderID", "description": "두번째 명령 (아비터 클로킹, 크립 확장, 라바 생성 등)"},
+		{"offset": "0x0A7", "type": "u8", "name": "buildingOverlayState", "description": "건물 오버레이 상태 (현재 불타는 이미지 상태)"},
+		{"offset": "0x0A8", "type": "u16", "name": "hpGain", "description": "수리, 건설시 증가하는 체력량"},
+		{"offset": "0x0AA", "type": "u16", "name": "shieldGain", "description": "건설시 증가하는 쉴드량"},
+		{"offset": "0x0AC", "type": "u16", "name": "remainingBuildTime", "description": "남은 건설 시간"},
+		{"offset": "0x0AE", "type": "u16", "name": "previousHP", "description": "유닛이 변할때의 이전 체력 (드론 건물 건설시 드론 체력이 previousHP에 저장됨)"},
+		{"offset": "0x0C0", "type": "union", "name": "특수한 유닛 정보", "description": "union 형식으로 저장된 특수한 유닛 정보들 (마인 개수, 격납 유닛 정보들, 애드온 정보, 자원 정보, 기술/업그레이드 남은 시간, 업그레이드 중인 업그레이드/기술 번호 등)", "sub": {
+			"vulture": [
+				{"offset": "0x0C0", "type": "u8", "name": "spiderMineCount", "description": "남은 마인 개수"}
+			],
+			"carrier": [
+				{"offset": "0x0C0", "type": "BW::CUnit*", "name": "pInHanger", "description": "first child inside the hanger"},
+				{"offset": "0x0C4", "type": "BW::CUnit*", "name": "pOutHanger", "description": "first child outside the hanger"},
+				{"offset": "0x0C8", "type": "u8", "name": "inHangerCount", "description": "number inside the hanger (used for scarab count)"},
+				{"offset": "0x0C9", "type": "u8", "name": "outHangerCount", "description": "number outside the hanger"}
+			],
+			"fighter": [
+				{"offset": "0x0C0", "type": "BW::CUnit*", "name": "parent", "description": ""},
+				{"offset": "0x0C4", "type": "BW::CUnit*", "name": "prev", "description": ""},
+				{"offset": "0x0C8", "type": "BW::CUnit*", "name": "next", "description": ""},
+				{"offset": "0x0CC", "type": "bool", "name": "inHanger", "description": ""}
+			],
+			"beacon": [
+				{"offset": "0x0C0", "type": "u32", "name": "_unknown_00", "description": ""},
+				{"offset": "0x0C4", "type": "u32", "name": "_unknown_04", "description": ""},
+				{"offset": "0x0C8", "type": "u32", "name": "flagSpawnFrame", "description": "flag beacons, the frame that the flag will spawn"}
+			],
+			"building": [
+				{"offset": "0x0C0", "type": "BW::CUnit*", "name": "addon", "description": ""},
+				{"offset": "0x0C4", "type": "u16", "addonBuildType": "addon", "description": ""},
+				{"offset": "0x0C6", "type": "u16", "addonBuildType": "upgradeResearchTime", "description": ""},
+				{"offset": "0x0C8", "type": "u8", "addonBuildType": "techType", "description": ""},
+				{"offset": "0x0C9", "type": "u8", "addonBuildType": "upgradeType", "description": ""},
+				{"offset": "0x0CA", "type": "u8", "addonBuildType": "larvaTimer", "description": ""},
+				{"offset": "0x0CB", "type": "u8", "addonBuildType": "landingTimer", "description": ""},
+				{"offset": "0x0CC", "type": "u8", "addonBuildType": "creepTimer", "description": ""},
+				{"offset": "0x0CD", "type": "u8", "addonBuildType": "upgradeLevel", "description": ""},
+				{"offset": "0x0CE", "type": "u16", "addonBuildType": "__E", "description": ""}
+			],
+			"worker": [
+				{"offset": "0x0C0", "type": "BW::CUnit*", "name": "pPowerup", "description": ""},
+				{"offset": "0x0C4", "type": "points", "name": "targetResource", "description": ""},
+				{"offset": "0x0C8", "type": "BW::CUnit*", "name": "targetResourceUnit", "description": ""},
+				{"offset": "0x0CC", "type": "u16", "name": "repairResourceLossTimer", "description": ""},
+				{"offset": "0x0CE", "type": "bool", "name": "isCarryingSomething", "description": "There is a \"ubIsHarvesting\" somewhere"},
+				{"offset": "0x0CF", "type": "u8", "name": "resourceCarryCount", "description": ""}
+			]
+		}},
+		{"offset": "0x0D0", "type": "union", "name": "특수한 유닛 정보", "description": "union 형식으로 저장된 특수한 유닛 정보들 (자원, 나이더스 커널, 고스트, 파일런, 사일로, 해처리 등)", "sub": {
+			"resource": [
+				{"offset": "0x0D0", "type": "u16", "name": "resourceCount", "description": "amount of resources"},
+				{"offset": "0x0D2", "type": "u8", "name": "resourceIscript", "description": ""},
+				{"offset": "0x0D3", "type": "u8", "name": "gatherQueueCount", "description": ""},
+				{"offset": "0x0D4", "type": "BW::CUnit*", "name": "nextGatherer", "description": "pointer to the next workerunit waiting in line to gather"},
+				{"offset": "0x0D8", "type": "u8", "name": "resourceGroup", "description": ""},
+				{"offset": "0x0D9", "type": "u8", "name": "resourceBelongsToAI", "description": ""}
+			],
+			"nydus": [
+				{"offset": "0x0D0", "type": "BW::CUnit*", "name": "exit", "description": "connected nydius canal"}
+			],
+			"ghost": [
+				{"offset": "0x0D0", "type": "BW::CSprite*", "name": "nukeDot", "description": ""}
+			],
+			"pylon": [
+				{"offset": "0x0D0", "type": "BW::CSprite*", "name": "pPowerTemplate", "description": ""}
+			],
+			"silo": [
+				{"offset": "0x0D0", "type": "BW::CUnit*", "name": "pNuke", "description": "attached nuke"},
+				{"offset": "0x0D4", "type": "bool", "name": "bReady", "description": ""}
+			],
+			"hatchery": [
+				{"offset": "0x0D0", "type": "::rect", "name": "harvestValue", "description": "wtf???"}
+			],
+			"powerup": [
+				{"offset": "0x0D0", "type": "points", "name": "origin", "description": ""}
+			],
+			"gatherer": [
+				{"offset": "0x0D0", "type": "BW::CUnit*", "name": "harvestTarget", "description": ""},
+				{"offset": "0x0D4", "type": "BW::CUnit*", "name": "prevHarvestUnit", "description": "When there is a gather conflict"},
+				{"offset": "0x0D8", "type": "BW::CUnit*", "name": "nextHarvestUnit", "description": ""}
+			]
+		}},
+		{"offset": "0x0DC", "type": "u32", "name": "statusFlags", "description": "스테이터스 플래그, 상태 정보"},
+		{"offset": "0x0F0", "type": "BW::CUnit*", "name": "previousBurrowedUnit", "description": ""},
+		{"offset": "0x0F4", "type": "BW::CUnit*", "name": "nextBurrowedUnit", "description": ""},
+		{"offset": "0x0F8", "type": "union", "name": "Rally XY", "description": "랠리 x,y좌표(각 2바이트) (랠리가 있는 유닛에게만 적용)", "sub": {
+			"rally": [
+				{"offset": "0x0F8", "type": "points", "name": "position", "description": ""},
+				{"offset": "0x0FC", "type": "BW::CUnit*", "name": "unit", "description": ""}
+			],
+			"PsiProvider": [
+				{"offset": "0x0F8", "type": "BW::CUnit*", "name": "prevPsiProvider", "description": ""},
+				{"offset": "0x0FC", "type": "BW::CUnit*", "name": "nextPsiProvider", "description": ""}
+			]
+		}},
+		{"offset": "0x100", "type": "BW::Path*", "name": "path", "description": "officially \"unitPath\""},
+		{"offset": "0x104", "type": "u8", "name": "pathingCollisionInterval", "description": ""},
+		{"offset": "0x105", "type": "u8", "name": "pathingFlags", "description": "0x01 = uses pathing; 0x02 = ?; 0x04 = ?"},
+		{"offset": "0x106", "type": "u8", "name": "_unused_0x106", "description": ""},
+		{"offset": "0x107", "type": "bool", "name": "isBeingHealed", "description": "1 if a medic is currently healing this unit"},
+		{"offset": "0x108", "type": "rect", "name": "contourBounds", "description": "a rect that specifies the closest contour (collision) points"},
+		{"offset": "0x110", "type": "u16", "name": "removeTimer", "description": "리무브 타이머. 유닛이 죽을때까지 남은 시간 (브루들링에 사용됨)"},
+		{"offset": "0x112", "type": "u16", "name": "defenseMatrixDamage", "description": "남은 디펜시브 매트릭스 체력 (*256 되어있음)"},
+		{"offset": "0x114", "type": "u8", "name": "defenseMatrixTimer", "description": "디펜스 매트릭스 타이머"},
+		{"offset": "0x115", "type": "u8", "name": "stimTimer", "description": "스팀팩 타이머"},
+		{"offset": "0x116", "type": "u8", "name": "ensnareTimer", "description": "인스네어 타이머"},
+		{"offset": "0x117", "type": "u8", "name": "lockdownTimer", "description": "락다운 타이머"},
+		{"offset": "0x118", "type": "u8", "name": "irradiateTimer", "description": "이레디에이트 타이머"},
+		{"offset": "0x119", "type": "u8", "name": "stasisTimer", "description": "스테이시스 필드 타이머"},
+		{"offset": "0x11A", "type": "u8", "name": "plagueTimer", "description": "플레이그 타이머"},
+		{"offset": "0x11B", "type": "u8", "name": "stormTimer", "description": "스톰 타이머 (스톰 안에 있으면 적용)"},
+		{"offset": "0x11C", "type": "BW::CUnit*", "name": "irradiatedBy", "description": "리마스터 미지원"},
+		{"offset": "0x120", "type": "u8", "name": "irradiatePlayerID", "description": "이레디에이트를 건 플레이어 ID"},
+		{"offset": "0x121", "type": "u8", "name": "parasiteFlags", "description": "패러사이트 플래그 (어떤 플레이어가 걸었는지 비트로 구별)"},
+		{"offset": "0x122", "type": "u8", "name": "cycleCounter", "description": "0~7을 반복하는 사이클. 이 값이 7에서 0이 될 때마다 각종 타이머(락다운 타이머 등)의 값이 1 내려갑니다."},
+		{"offset": "0x123", "type": "bool", "name": "isBlind", "description": "블라인드 여부"},
+		{"offset": "0x124", "type": "u8", "name": "maelstromTimer", "description": "마엘스트롬 타이머"},
+		{"offset": "0x125", "type": "u8", "name": "_unused_0x125", "description": ""},
+		{"offset": "0x126", "type": "u8", "name": "acidSporeCount", "description": "애시드 스포어 중첩 수"},
+		{"offset": "0x127", "type": "u8", "name": "acidSporeTime[9]", "description": "애시드 스포어 단계별 타이머 (갱신시 가장 낮은 시간을 가진 단계가 갱신됨)"},
+		{"offset": "0x134", "type": "void*", "name": "pAI", "description": "pointer to AI class, we're not using this though"},
+		{"offset": "0x138", "type": "u16", "name": "airStrength", "description": ""},
+		{"offset": "0x13A", "type": "u16", "name": "groundStrength", "description": ""},
+		{"offset": "0x13E", "type": "u32", "name": "finder", "description": "left, right, top, bottom; Ordering for unit boundaries in unit finder for binary search"},
+		{"offset": "0x14C", "type": "u8", "name": "_repulseUnknown", "description": ""},
+		{"offset": "0x14D", "type": "u8", "name": "repulseAngle", "description": "updated only when air unit is being pushed"},
+		{"offset": "0x14E", "type": "u8", "name": "bRepMtxX", "description": "(mapsizex/1.5 max)"},
+		{"offset": "0x14F", "type": "u8", "name": "bRepMtxY", "description": "(mapsizex/1.5 max)"}
+	]
+}
