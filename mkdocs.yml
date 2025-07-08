@@ -1,0 +1,69 @@
+site_name: EUD Lab
+repo_url: https://github.com/saebyeok0306/mkdocs-test
+copyright: Copyright &copy; 2025 saebyeok0306. All rights reserved.
+edit_uri: edit/main/docs/
+
+# nav:
+#   - Home:
+#     - Home: index.md
+#     - TEST: home/test.md
+#   - Getting started:
+#     - Installation: getting-started.md
+#   - Data: test/
+#   - Blog:
+#     - blog/index.md
+
+theme:
+  name: material
+  features:
+    - content.action.edit
+    - content.footnote.tooltips
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+  language: ko
+  icon:
+    edit: material/pencil 
+    view: material/eye
+
+plugins:
+  - blog:
+      post_url_date_format: yyyy.MM.dd
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: !ENV [CI, false]
+      type: date
+      fallback_to_build_date: !ENV [CI, false]
+  - git-committers:
+      repository: saebyeok0306/mkdocs-test
+      branch: main
+      enabled: !ENV [CI, false]
+
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/squidfunk
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocs-material/
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/squidfunk.bsky.social
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/squidfunk
+
+extra_css:
+  - stylesheets/extra.css
