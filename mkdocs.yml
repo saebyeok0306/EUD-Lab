@@ -100,6 +100,7 @@ extra_css:
 markdown_extensions:
   - tables
   - admonition
+  - footnotes
   - pymdownx.highlight:
       pygments_lang_class: true
       anchor_linenums: true
