@@ -19,7 +19,9 @@ theme:
   features:
     - content.action.edit
     - content.footnote.tooltips
+    - content.code.copy
     - navigation.indexes
+    - navigation.prune
     - navigation.tabs
     - navigation.top
     - navigation.footer
@@ -69,13 +71,14 @@ plugins:
   - minify:
       minify_html: true
   - git-revision-date-localized:
-      enable_creation_date: !ENV [CI, false]
+      enabled: !ENV [CI, false]
+      enable_creation_date: true
       type: date
-      fallback_to_build_date: !ENV [CI, false]
+      fallback_to_build_date: true
   - git-committers:
+      enabled: !ENV [CI, false]
       repository: saebyeok0306/EUD-Lab
       branch: main
-      enabled: !ENV [CI, false]
 
 extra:
   status:
@@ -95,3 +98,8 @@ extra_css:
 
 markdown_extensions:
   - tables
+  - admonition
+  - pymdownx.highlight:
+      pygments_lang_class: true
+      anchor_linenums: true
+  - pymdownx.superfences

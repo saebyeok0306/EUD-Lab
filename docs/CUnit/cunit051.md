@@ -1,0 +1,8 @@
+# 0x096: isCloaked
+
+| Name | isCloaked |
+| ----| ------------ |
+| Offset | 0x096 |
+| Type | bool |
+| Description | 클로킹 여부 |<br>
+

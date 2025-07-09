@@ -1,0 +1,9 @@
+# SC Upgrades Available (0-45)
+
+| `Address` | `Player ID` | `Version` | `Size` | `Length` | `SCR` |
+| ---------- | ----------- | --------- | ------ | -------- | ---- |
+| 0x58D088 | 2889 | 1.16.1 | 46 | 12 | Simple Data |
+
+# Description
+
+Table layout is reverse compared to deaths/kills table.<br><br>1 row per player, 46 bytes per row, 1 byte per upgrade.<br><br>BW upgrades are elsewhere.<br><br>Offset: 46 * Player + Offs<br><br>SC Upgrades:<br>ID Offs. Name<br>00 +0 Terran Infantry Armor<br>01 +1 Terran Vehicle Plating<br>02 +2 Terran Ship Plating<br>03 +3 Zerg Carapace<br>04 +4 Zerg Flyer Caparace<br>05 +5 Protoss Armor<br>06 +6 Protoss Plating<br>07 +7 Terran Infantry Weapons<br>08 +8 Terran Vehicle Weapons<br>09 +9 Terran Ship Weapons<br>10 +10 Zerg Melee Attacks<br>11 +11 Zerg Missile Attacks<br>12 +12 Zerg Flyer Attacks<br>13 +13 Protoss Ground Weapons<br>14 +14 Protoss Air Weapons<br>15 +15 Protoss Plasma Shields<br>16 +16 U-238 Shells<br>17 +17 Ion Thrusters<br>18 +18 Burst Lasers (Unused)<br>19 +19 Titan Reactor (SV +50)<br>20 +20 Ocular Implants<br>21 +21 Moebius Reactor (Ghost +50)<br>22 +22 Apollo Reactor (Wraith +50)<br>23 +23 Colossus Reactor (BC +50)<br>24 +24 Ventral Sacs<br>25 +25 Antennae<br>26 +26 Pneumatized Carapace<br>27 +27 Metabolic Boost<br>28 +28 Adrenal Glands<br>29 +29 Muscular Augments<br>30 +30 Grooved Spines<br>31 +31 Gamete Meiosis (Queen +50)<br>32 +32 Metasynaptic Node (Defiler +50)<br>33 +33 Singularity Charge<br>34 +34 Leg Enhancements<br>35 +35 Scarab Damage<br>36 +36 Reaver Capacity<br>37 +37 Gravitic Drive<br>38 +38 Sensor Array<br>39 +39 Gravitic Boosters<br>40 +40 Khaydarin Amulet (HT +50)<br>41 +41 Apial Sensors<br>42 +42 Gravitic Thrusters<br>43 +43 Carrier Capacity<br>44 +44 Khaydarin Core (Arbiter +50)<br>45 +45 Unknown Upgrade45

@@ -1,0 +1,9 @@
+# Trigger Current Player  aka CP Trick
+
+| `Address` | `Player ID` | `Version` | `Size` | `Length` | `SCR` |
+| ---------- | ----------- | --------- | ------ | -------- | ---- |
+| 0x6509B0 | 203155 | 1.16.1 | 4 | 1 | Simple Data |
+
+# Description
+
+Used to dynamically run EUDs or dereference pointers.<br><br>Sets "Current Player" in triggers to be a reference to a different base address for the deaths table.<br><br>e.g.<br>Set Deaths("Int:203155", "Terran Marine", Set to, EPD);<br>Set Deaths("Int:203155", "Terran Marine", Add/Subtract, whatever);<br>Set Deaths("Current Player", "Terran Marine", Set to/Add/Subtract, whatever);<br><br><br>Example: Implement Set Minerals for current player<br>// Add -11421 to 0x006509B0 (player ID corresponding to 0x0057F0F0)<br>SetMemory(0x6509B0, Add, 0xFFFFD363);<br>// Add 50 to byte offset for that address -- current player will increase target address by 4 bytes for each player that runs it<br>SetDeaths(CurrentPlayer, Add, 50, "Terran Marine");<br>// Add +11421 to 0x006509B0 to set it back to what it was<br>SetMemory(0x6509B0, Add, 0x00002C9D);<br><br><br>Example: Implement a SetKills action for Current Player<br>// Add -2736 to 0x6509B0 (player ID corresponding to 0x005878A4)<br>SetMemory(0x6509B0, Add, 0xFFFFF550);<br>// Current player combined with unit ID now references the correct target address in the Kills table)<br>// This SetDeaths is now really SetKills to add/subtract/set to for unit of choice<br>SetDeaths(CurrentPlayer, Subtract, 1, "Terran Ghost");<br>// Add +2736 to 0x006509B0 to set it back to what it was<br>SetMemory(0x6509B0, Add, 0x00000AB0);<br>Note: Set Deaths needs to be for current player, P1/P2/etc. would modify the normal deaths table.<br>Note2: Cannot use Any Unit/Men/Buildings/Factories for the unit, those do have Unit IDs, are not stored in the Kills table, and would overflow into other areas.
