@@ -73,7 +73,7 @@ plugins:
       type: date
       fallback_to_build_date: !ENV [CI, false]
   - git-committers:
-      repository: saebyeok0306/mkdocs-test
+      repository: saebyeok0306/EUD-Lab
       branch: main
       enabled: !ENV [CI, false]
 
