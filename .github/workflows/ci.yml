@@ -29,4 +29,5 @@ jobs:
       - name: Deploy to GitHub Pages
         env:
             CI: true
+            CI_JOB_TOKEN: ${{ secrets.TOKEN }}
         run: mkdocs gh-deploy --force
