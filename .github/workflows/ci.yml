@@ -5,6 +5,8 @@ on:
       - main
 permissions:
   contents: write
+env:
+  CI: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
