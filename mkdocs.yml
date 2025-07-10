@@ -80,6 +80,9 @@ plugins:
       repository: saebyeok0306/EUD-Lab
       branch: main
       token: !ENV ["CI_JOB_TOKEN"]
+  - gen-files:
+      scripts:
+        - scripts/gen_nav_list.py
 
 extra:
   status:
@@ -94,6 +97,10 @@ extra:
     - icon: fontawesome/solid/mug-saucer
       link: https://cafe.naver.com/edac
 
+extra_javascript:
+  - javascripts/address_list.js
+  - javascripts/extra.js
+
 extra_css:
   - stylesheets/extra.css
 
@@ -105,3 +112,4 @@ markdown_extensions:
       pygments_lang_class: true
       anchor_linenums: true
   - pymdownx.superfences
+  - attr_list

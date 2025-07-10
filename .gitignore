@@ -2,8 +2,9 @@
 site/
 .idea/
 __pycache__/
+.venv/
 *.json
-*.py
+docs/**/*.py
 *.pkl
 *.zip
 .env
