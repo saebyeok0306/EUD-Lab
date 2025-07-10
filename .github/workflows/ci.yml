@@ -25,6 +25,22 @@ jobs:
           restore-keys: |
             mkdocs-material-
       
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Cache git-committers data
+        uses: actions/cache@v4
+        with:
+          path: .cache/git-committers # mkdocs.yml에 설정한 경로와 동일해야 합니다.
+          key: ${{ runner.os }}-git-committers-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-git-committers-
+      
       - name: ⚙️ Check for .md file changes and set build environment
         id: check_files
         run: |
