@@ -30,4 +30,5 @@ jobs:
         env:
             CI: true
             CI_JOB_TOKEN: ${{ secrets.TOKEN }}
+            GOOGLE_ANALYTICS_KEY: G-HD5X0F3N0G
         run: mkdocs gh-deploy --force
