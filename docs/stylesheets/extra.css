@@ -87,3 +87,9 @@
 .custom-modal-list li a:hover {
     color: var(--md-typeset-a-color);
 }
+
+.md-button.custom-button {
+    padding: .225em .5em;
+    font-weight: 400;
+    font-size: 0.6rem;
+}

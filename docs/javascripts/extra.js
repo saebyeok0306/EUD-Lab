@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 모달을 활성화할 버튼 생성
     const openModalButton = document.createElement('button');
     openModalButton.innerText = '전체 목록 보기';
-    openModalButton.className = 'md-button md-button--primary'; // MkDocs Material 테마 버튼 스타일 적용
+    openModalButton.className = 'md-button custom-button'; // MkDocs Material 테마 버튼 스타일 적용
 
     // 모달 엘리먼트들 생성
     const modal = document.createElement('div');
