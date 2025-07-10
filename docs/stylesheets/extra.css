@@ -93,3 +93,12 @@
     font-weight: 400;
     font-size: 0.6rem;
 }
+
+.md-source-viewcount {
+    align-items: center;
+    color: var(--md-default-fg-color--light);
+    display: inline-flex;
+    font-size: .68rem;
+    gap: .3rem;
+    margin-right: .6rem;
+}
