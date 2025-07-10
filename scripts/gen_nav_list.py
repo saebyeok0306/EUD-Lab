@@ -33,7 +33,8 @@ with mkdocs_gen_files.open("Address/index.md", "w") as fd:
                 page_title = f"{address[0]} {page_title}"
 
                 # 마크다운 리스트 형식으로 링크를 추가합니다.
-                file_list.append({"title": page_title, "path": f"../{relative_path}"})
+                href = f"{relative_path.replace('.md', '')}"
+                file_list.append({"title": page_title, "path": f"{href}"})
 
 js_content = f"window.addressList = {json.dumps(file_list, ensure_ascii=False)};"
 

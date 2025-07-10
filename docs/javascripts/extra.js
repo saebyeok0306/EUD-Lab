@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
                 link.innerText = file.title;
-                link.href = `/${file.path.replace('.md', '')}`; // MkDocs 링크 형식에 맞게 경로 설정
+                link.href = `/${file.path}/`; // MkDocs 링크 형식에 맞게 경로 설정
                 listItem.appendChild(link);
                 modalList.appendChild(listItem);
             });
