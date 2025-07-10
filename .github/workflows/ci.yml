@@ -46,7 +46,7 @@ jobs:
         run: |
           # 마지막 커밋에서 변경된 파일 목록을 가져옴
           # docs/ 폴더 내 .md 파일 변경이 있는지 확인
-          if git diff --name-only HEAD~1 HEAD | grep -qE '^docs/.*\.md$'; then
+          if git diff --name-only HEAD~1 HEAD | grep -q '^docs/'; then
             echo "✅ Docs changes found. Enabling git-committers plugin."
             echo "ENABLE_PLUGIN=true" >> $GITHUB_ENV
           else
