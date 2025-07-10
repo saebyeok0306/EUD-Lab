@@ -95,7 +95,7 @@ function AddViewCount() {
     const path = window.location.pathname;
     const hashedPath = btoa(path);
 
-    const apiUrl = `http://view.devlog.run/api/cnt/v1/eudlab/post/${hashedPath}`;
+    const apiUrl = `https://view.devlog.run/api/cnt/v1/eudlab/post/${hashedPath}`;
 
     // 페이지의 article을 찾습니다.
     const article = document.querySelector('article');
