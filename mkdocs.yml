@@ -76,7 +76,7 @@ plugins:
       type: date
       fallback_to_build_date: true
   - git-committers:
-      enabled: !ENV [CI, false]
+      enabled: !ENV [MKDOCS_GIT_COMMITTERS_ENABLED, false]
       repository: saebyeok0306/EUD-Lab
       branch: main
       token: !ENV ["CI_JOB_TOKEN"]
