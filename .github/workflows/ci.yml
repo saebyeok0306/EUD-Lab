@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+          
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v4
         with:
@@ -40,19 +41,6 @@ jobs:
           key: ${{ runner.os }}-git-committers-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-git-committers-
-      
-      - name: ⚙️ Check for .md file changes and set build environment
-        id: check_files
-        run: |
-          # 마지막 커밋에서 변경된 파일 목록을 가져옴
-          # docs/ 폴더 내 .md 파일 변경이 있는지 확인
-          if git show --name-only --pretty=format:"" HEAD | grep -q '^docs/'; then
-            echo "✅ Docs changes found. Enabling git-committers plugin."
-            echo "ENABLE_PLUGIN=true" >> $GITHUB_ENV
-          else
-            echo "💡 No docs changes. Disabling git-committers plugin for a faster build."
-            echo "ENABLE_PLUGIN=false" >> $GITHUB_ENV
-          fi
 
       - run: pip install -r requirements.txt
 
@@ -60,6 +48,5 @@ jobs:
         env:
             CI: true
             CI_JOB_TOKEN: ${{ secrets.TOKEN }}
-            MKDOCS_GIT_COMMITTERS_ENABLED: ${{ env.ENABLE_PLUGIN }}
             GOOGLE_ANALYTICS_KEY: G-HD5X0F3N0G
         run: mkdocs gh-deploy --force
