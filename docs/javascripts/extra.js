@@ -1,7 +1,6 @@
 // 페이지 로드가 완료되면 실행
 document.addEventListener('DOMContentLoaded', function() {
-    
-    if (!window.location.pathname.startsWith('/Address/')) {
+    if (!window.location.pathname.includes('/Address')) {
         return;
     }
     // 모달을 활성화할 버튼 생성
