@@ -6,6 +6,10 @@ on:
       - 'mkdocs.yml'
     branches:
       - main
+  workflow_dispatch:
+    branches:
+      - main
+
 permissions:
   contents: write
 jobs:
