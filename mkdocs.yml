@@ -14,7 +14,7 @@ theme:
     - navigation.prune
     - navigation.tabs
     - navigation.top
-    - navigation.footer
+#    - navigation.footer
     - navigation.tracking
   language: ko
   icon:
@@ -108,7 +108,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - attr_list
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 
 hooks:
   - scripts/hooks.py
