@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <meta property="og:title" content="{{ page.title | e }}{% if page.title and page.title | upper != 'EUD LAB' %} - EUD Lab{% endif %}">
+  {% if page.meta and page.meta.description %}
+    <meta property="og:description" content="{{ page.meta.description | e }}">
+  {% endif %}
+{% endblock %}

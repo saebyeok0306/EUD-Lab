@@ -62,6 +62,7 @@ theme:
   font:
     text: Roboto
     code: JetBrains Mono
+  custom_dir: overrides
 
 plugins:
   - blog:
@@ -72,7 +73,7 @@ plugins:
       minify_html: true
   - git-revision-date-localized:
       enabled: !ENV [CI, false]
-      enable_creation_date: true
+      enable_creation_date: false
       type: date
       fallback_to_build_date: true
   - git-committers:
@@ -84,6 +85,8 @@ plugins:
   - gen-files:
       scripts:
         - scripts/gen_nav_list.py
+  - meta:
+      meta_file: .meta.yml
 
 extra:
   status:
@@ -113,4 +116,6 @@ markdown_extensions:
       pygments_lang_class: true
       anchor_linenums: true
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - attr_list
