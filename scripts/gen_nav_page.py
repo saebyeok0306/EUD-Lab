@@ -6,7 +6,7 @@ from pathlib import Path
 source_path = Path("docs/Address")
 
 # 'all-pages.md' 라는 이름으로 가상의 마크다운 파일을 생성합니다.
-with mkdocs_gen_files.open("Address/index.md", "w") as fd:
+with mkdocs_gen_files.open("address/index.md", "w") as fd:
     # 페이지 제목을 작성합니다.
     print("# 전체 페이지 목록\n", file=fd)
     hex_pattern = r'0x[0-9a-fA-F]+'
