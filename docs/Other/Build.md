@@ -10,7 +10,7 @@
 pip install -r requirements.txt
 ```
 
-종속성 패키지를 설치했다면, 다음 명령어로 실행합니다.
+의존성 패키지를 설치했다면, 다음 명령어로 실행합니다.
 
 ```bash
 mkdocs serve
