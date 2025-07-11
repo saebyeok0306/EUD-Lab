@@ -10,6 +10,8 @@
 !!! Example "EUD Editor2"
 
     <mark>:fontawesome-solid-code: 맛있는빙수</mark>님이 만드신 에디터입니다. 현재 가장 최신버전은 <mark>SE 0.18.1.7</mark>입니다. StarEdit.net 유저들과 아르타니스님이 이어서 개발한 버전으로 버그 수정, 에디터 성능 개선, UI 조절, 영어 번역 개선 등 여러 방면으로 EE2를 개선한 버전입니다.  
+
+    개인적으로는 최신버전은 버그가 많아서 2019년도 버전을 쓰시는 걸 추천합니다.  
     
     [:fontawesome-solid-link: 링크](https://cafe.naver.com/edac/112275){ .md-button }
 
