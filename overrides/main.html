@@ -2,8 +2,15 @@
 
 {% block extrahead %}
   {{ super() }}
-  <meta property="og:title" content="{{ page.title | e }}{% if page.title and page.title | upper != 'EUD LAB' %} - EUD Lab{% endif %}">
-  {% if page.meta and page.meta.description %}
-    <meta property="og:description" content="{{ page.meta.description | e }}">
+  {% if page.title and page.title | upper != 'EUD LAB' %}
+    {% set summary = page.content | striptags | truncate(100) %}
+    <meta property="og:title" content="{{ page.title | e }} - EUD Lab">
+    <meta property="og:description" content="{{ summary | e }}">
+    <meta name="description" content="{{ summary | e }}">
+  {% else %}
+    <meta property="og:title" content="{{ page.title | e }} - EUD Lab">
+    {% set desc = "EUD Lab is an archive project focused on StarCraft 1's EUD (Extended Unit Deaths), providing and documenting helpful information for custom use map development." %}
+    <meta property="og:description" content="{{ desc | e }}">
+    <meta name="description" content="{{ desc | e }}">
   {% endif %}
 {% endblock %}
