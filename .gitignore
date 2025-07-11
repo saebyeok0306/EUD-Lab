@@ -4,7 +4,7 @@ site/
 __pycache__/
 .venv/
 *.json
-docs/**/*.py
+scripts/**/*.py
 *.pkl
 *.zip
 .env

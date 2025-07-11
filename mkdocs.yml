@@ -4,16 +4,6 @@ repo_name: EUD-Lab
 copyright: Copyright &copy; 2025 saebyeok0306 All rights reserved.
 edit_uri: edit/main/docs/
 
-# nav:
-#   - Home:
-#     - Home: index.md
-#     - TEST: home/test.md
-#   - Getting started:
-#     - Installation: getting-started.md
-#   - Data: test/
-#   - Blog:
-#     - blog/index.md
-
 theme:
   name: material
   features:
@@ -24,7 +14,7 @@ theme:
     - navigation.prune
     - navigation.tabs
     - navigation.top
-    - navigation.footer
+#    - navigation.footer
     - navigation.tracking
   language: ko
   icon:
@@ -118,4 +108,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - attr_list
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+hooks:
+  - scripts/hooks.py
