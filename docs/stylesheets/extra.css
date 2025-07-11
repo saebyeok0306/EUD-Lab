@@ -99,7 +99,6 @@
     position: relative; /* 툴팁 위치의 기준점 */
     display: inline-block;
     transition: transform 0.2s ease-in-out;
-    margin-left: -5px; /* 이미지 겹침 효과 */
 }
 .contributor-link:first-child {
     margin-left: 0; /* 첫 번째 이미지는 겹치지 않음 */

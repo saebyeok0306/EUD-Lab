@@ -1,6 +1,12 @@
 import os
 import requests
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except:
+    pass
+
 TOKEN = os.getenv('GITHUB_TOKEN')
 
 # 기여자 목록을 가져올 GitHub 리포지토리 정보
@@ -32,30 +38,7 @@ def on_page_markdown(markdown, page, config, files):
     
     if page.file.src_path == TARGET_PAGE:
         print(f"'{TARGET_PAGE}'에 기여자 목록을 추가합니다.")
-        # contributors = get_contributors()
-        contributors = [{
-            "login": "saebyeok0306",
-            "id": 67100702,
-            "node_id": "MDQ6VXNlcjY3MTAwNzAy",
-            "avatar_url": "https://avatars.githubusercontent.com/u/67100702?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/saebyeok0306",
-            "html_url": "https://github.com/saebyeok0306",
-            "followers_url": "https://api.github.com/users/saebyeok0306/followers",
-            "following_url": "https://api.github.com/users/saebyeok0306/following{/other_user}",
-            "gists_url": "https://api.github.com/users/saebyeok0306/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/saebyeok0306/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/saebyeok0306/subscriptions",
-            "organizations_url": "https://api.github.com/users/saebyeok0306/orgs",
-            "repos_url": "https://api.github.com/users/saebyeok0306/repos",
-            "events_url": "https://api.github.com/users/saebyeok0306/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/saebyeok0306/received_events",
-            "type": "User",
-            "user_view_type": "public",
-            "site_admin": False,
-            "contributions": 26
-        }]
-        contributors = [contributors[0], contributors[0], contributors[0], contributors[0], contributors[0]]
+        contributors = get_contributors()
         
         if contributors:
 
@@ -75,7 +58,7 @@ def on_page_markdown(markdown, page, config, files):
                 avatar_html_list.append(avatar_html)
             
             total_contributors = len(contributors)
-            contrib_md = f'\n\n<div class="contributors-list">{''.join(avatar_html_list)}</div>'
+            contrib_md = f'\n\n---\n\n## 프로젝트에 기여한 분들\n\n이 프로젝트는 열정적인 분들의 도움으로 만들어졌습니다. 모두에게 감사드립니다!\n<div class="contributors-list">{"".join(avatar_html_list)}</div>'
 
             # 기존 Markdown 내용의 끝에 기여자 목록 추가
             return markdown + contrib_md
