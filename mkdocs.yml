@@ -93,6 +93,7 @@ extra:
 
 extra_javascript:
   - javascripts/address_list.js
+  - javascripts/cunit_list.js
   - javascripts/extra.js
 
 extra_css:

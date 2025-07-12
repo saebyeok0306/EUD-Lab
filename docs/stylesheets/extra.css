@@ -1,3 +1,25 @@
+body {
+    --md-accent-fg-color: #c22664 !important;
+    --md-typeset-a-color: #ff3183 !important;
+
+    a {
+        --md-typeset-a-color: #5e8bde !important;
+    }
+}
+
+.md-header__topic {
+    cursor: pointer;
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    transition: opacity .25s;
+}
+
+.md-header__topic:hover {
+    opacity: .7;
+}
+
 .md-search__form {
     border-radius: 15px;
     background-color: #202020;
@@ -16,15 +38,41 @@
     background-color: rgba(0,0,0,0.6);
 }
 
+.custom-modal-header {
+    background-color: #448aff1a;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0 0.5rem 0 0.5rem;
+    height: 2rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center
+}
+
+.modal-header-icon {
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    border: none;
+    vertical-align: middle;
+    fill: white;
+    margin-right: 0.5rem;
+}
+
 /* 모달 내용 박스 */
 .custom-modal-content {
     /* background-color: #fefefe; */
     margin: 10% auto;
-    padding: 20px 30px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 1000px;
-    border-radius: 8px;
+    max-width: 800px;
+    /*border-radius: 8px;*/
+    border: .075rem solid #448aff;
+    border-radius: .2rem;
+    box-shadow: var(--md-shadow-z1);
     position: relative;
     animation: fadeIn 0.3s;
     background-color: var(--md-default-bg-color);
@@ -38,9 +86,6 @@
 /* 닫기 버튼 (x) */
 .custom-modal-close {
     /* color: #aaa; */
-    position: absolute;
-    top: 10px;
-    right: 20px;
     font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
@@ -53,8 +98,10 @@
 
 /* 모달 안의 리스트 스타일 */
 .custom-modal-list {
+    margin-block-start: 0 !important;
     list-style-type: none;
     padding: 0;
+    margin: 0 0.5rem 0 0.5rem;
     max-height: 60vh;
     overflow-y: auto;
     font-size: 0.7rem;
@@ -62,6 +109,7 @@
 
 .custom-modal-list li {
     padding: 10px 5px;
+    margin: 0;
     border-bottom: 1px solid #eeeeee1e;
 }
 
