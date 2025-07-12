@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x0AA |
 | Type | u16 |
+| Mask | 0xFFFF0000 |
 | Description | 건설시 증가하는 쉴드량 |<br>
 

@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x07C |
 | Type | BW::CUnit* |
+| Mask | 0xFFFFFFFF |
 | Description | 피격시 자동으로 공격할 유닛의 구조오프셋 |<br>
 

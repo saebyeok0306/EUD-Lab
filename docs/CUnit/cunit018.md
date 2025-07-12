@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x040 |
 | Type | point |
+| Mask | 0xFFFFFFFF |
 | Description |  |<br>
 

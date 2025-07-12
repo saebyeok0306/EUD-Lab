@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x03C |
 | Type | s32 |
+| Mask | 0xFFFFFFFF |
 | Description | 현재 속도2 |<br>
 

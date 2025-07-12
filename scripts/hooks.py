@@ -7,7 +7,7 @@ try:
 except:
     pass
 
-TOKEN = os.getenv('TOKEN')
+TOKEN = os.getenv('CI_JOB_TOKEN')
 
 # 기여자 목록을 가져올 GitHub 리포지토리 정보
 REPO_OWNER = "saebyeok0306"

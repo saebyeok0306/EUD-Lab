@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x08F |
 | Type | u8 |
+| Mask | 0xFF000000 |
 | Description | 킬 수 |<br>
 

@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x086 |
 | Type | u8 |
+| Mask | 0x00FF0000 |
 | Description |  |<br>
 

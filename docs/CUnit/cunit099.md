@@ -4,5 +4,6 @@
 | ----| ------------ |
 | Offset | 0x14D |
 | Type | u8 |
+| Mask | 0x0000FF00 |
 | Description | updated only when air unit is being pushed |<br>
 
