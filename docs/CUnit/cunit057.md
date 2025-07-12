@@ -1,9 +1,9 @@
-# 0x0A6: secondaryOrderID
+# 0x0A4: buildQueueSlot
 
-| Name | secondaryOrderID |
+| Name | buildQueueSlot |
 | ----| ------------ |
-| Offset | 0x0A6 |
+| Offset | 0x0A4 |
 | Type | u8 |
-| Mask | 0x00FF0000 |
-| Description | 두번째 명령 (아비터 클로킹, 크립 확장, 라바 생성 등) |<br>
+| Mask | 0x000000FF |
+| Description | 다음 사용할 생산 대기열 번호 |<br>
 

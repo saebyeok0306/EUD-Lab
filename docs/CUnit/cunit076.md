@@ -1,9 +1,9 @@
-# 0x112: defenseMatrixDamage
+# 0x0F4: nextBurrowedUnit
 
-| Name | defenseMatrixDamage |
+| Name | nextBurrowedUnit |
 | ----| ------------ |
-| Offset | 0x112 |
-| Type | u16 |
-| Mask | 0xFFFF0000 |
-| Description | 남은 디펜시브 매트릭스 체력 (*256 되어있음) |<br>
+| Offset | 0x0F4 |
+| Type | BW::CUnit* |
+| Mask | 0xFFFFFFFF |
+| Description |  |<br>
 

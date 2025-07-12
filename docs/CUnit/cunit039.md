@@ -1,9 +1,9 @@
-# 0x080: connectedUnit
+# 0x07C: autoTargetUnit
 
-| Name | connectedUnit |
+| Name | autoTargetUnit |
 | ----| ------------ |
-| Offset | 0x080 |
+| Offset | 0x07C |
 | Type | BW::CUnit* |
 | Mask | 0xFFFFFFFF |
-| Description | 연결된 유닛 (라바의 주인 건물, 건설중인 테란 건물의 SCV, 애드온의 주인 건물, 탑승한 수송선/벙커 등) |<br>
+| Description | 피격시 자동으로 공격할 유닛의 구조오프셋 |<br>
 

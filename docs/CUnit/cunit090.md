@@ -1,9 +1,9 @@
-# 0x124: maelstromTimer
+# 0x118: irradiateTimer
 
-| Name | maelstromTimer |
+| Name | irradiateTimer |
 | ----| ------------ |
-| Offset | 0x124 |
+| Offset | 0x118 |
 | Type | u8 |
 | Mask | 0x000000FF |
-| Description | 마엘스트롬 타이머 |<br>
+| Description | 이레디에이트 타이머 |<br>
 

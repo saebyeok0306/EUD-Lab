@@ -1,9 +1,9 @@
-# 0x108: contourBounds
+# 0x0EC: currentBuildUnit
 
-| Name | contourBounds |
+| Name | currentBuildUnit |
 | ----| ------------ |
-| Offset | 0x108 |
-| Type | rect |
+| Offset | 0x0EC |
+| Type | BW::CUnit* |
 | Mask | 0xFFFFFFFF |
-| Description | a rect that specifies the closest contour (collision) points |<br>
+| Description | 건물이나 유닛에서 생산중인 유닛 |<br>
 

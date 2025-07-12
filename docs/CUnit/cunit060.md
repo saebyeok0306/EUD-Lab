@@ -1,9 +1,9 @@
-# 0x0AA: shieldGain
+# 0x0A7: buildingOverlayState
 
-| Name | shieldGain |
+| Name | buildingOverlayState |
 | ----| ------------ |
-| Offset | 0x0AA |
-| Type | u16 |
-| Mask | 0xFFFF0000 |
-| Description | 건설시 증가하는 쉴드량 |<br>
+| Offset | 0x0A7 |
+| Type | u8 |
+| Mask | 0xFF000000 |
+| Description | 건물 오버레이 상태 (현재 불타는 이미지 상태) |<br>
 

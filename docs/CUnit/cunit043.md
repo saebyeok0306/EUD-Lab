@@ -1,9 +1,9 @@
-# 0x087: attackNotifyTimer
+# 0x086: _unknown_0x086
 
-| Name | attackNotifyTimer |
+| Name | _unknown_0x086 |
 | ----| ------------ |
-| Offset | 0x087 |
+| Offset | 0x086 |
 | Type | u8 |
-| Mask | 0xFF000000 |
-| Description | 피격 경고음("아군이 공격받고 있습니다" 쿨타임) |<br>
+| Mask | 0x00FF0000 |
+| Description |  |<br>
 

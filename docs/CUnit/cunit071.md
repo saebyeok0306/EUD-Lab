@@ -1,9 +1,9 @@
-# 0x105: pathingFlags
+# 0x0E3: recentOrderTimer
 
-| Name | pathingFlags |
+| Name | recentOrderTimer |
 | ----| ------------ |
-| Offset | 0x105 |
+| Offset | 0x0E3 |
 | Type | u8 |
-| Mask | 0x0000FF00 |
-| Description | 0x01 = uses pathing; 0x02 = ?; 0x04 = ? |<br>
+| Mask | 0xFF000000 |
+| Description |  |<br>
 

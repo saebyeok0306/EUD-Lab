@@ -1,9 +1,9 @@
-# 0x14E: bRepMtxX
+# 0x125: _unused_0x125
 
-| Name | bRepMtxX |
+| Name | _unused_0x125 |
 | ----| ------------ |
-| Offset | 0x14E |
+| Offset | 0x125 |
 | Type | u8 |
-| Mask | 0x00FF0000 |
-| Description | repulse matrix X (mapsizex/1.5 max) |<br>
+| Mask | 0x0000FF00 |
+| Description |  |<br>
 

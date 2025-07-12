@@ -1,9 +1,9 @@
-# 0x14C: _repulseUnknown
+# 0x123: isBlind
 
-| Name | _repulseUnknown |
+| Name | isBlind |
 | ----| ------------ |
-| Offset | 0x14C |
+| Offset | 0x123 |
 | Type | u8 |
-| Mask | 0x000000FF |
-| Description |  |<br>
+| Mask | 0xFF000000 |
+| Description | 블라인드 여부 (1 << targetPlayerId) |<br>
 

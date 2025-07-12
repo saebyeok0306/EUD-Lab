@@ -1,9 +1,9 @@
-# 0x11B: stormTimer
+# 0x110: removeTimer
 
-| Name | stormTimer |
+| Name | removeTimer |
 | ----| ------------ |
-| Offset | 0x11B |
-| Type | u8 |
-| Mask | 0xFF000000 |
-| Description | 스톰 타이머 (스톰 안에 있으면 적용) |<br>
+| Offset | 0x110 |
+| Type | u16 |
+| Mask | 0x0000FFFF |
+| Description | 리무브 타이머. 유닛이 죽을때까지 남은 시간 (브루들링에 사용됨) |<br>
 

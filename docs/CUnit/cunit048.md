@@ -1,9 +1,9 @@
-# 0x092: AIActionFlag
+# 0x090: lastAttackingPlayer
 
-| Name | AIActionFlag |
+| Name | lastAttackingPlayer |
 | ----| ------------ |
-| Offset | 0x092 |
+| Offset | 0x090 |
 | Type | u8 |
-| Mask | 0x00FF0000 |
-| Description | AI 내에서만 사용 |<br>
+| Mask | 0x000000FF |
+| Description | 마지막으로 이 유닛을 공격한 플레이어 (아군 제외) |<br>
 

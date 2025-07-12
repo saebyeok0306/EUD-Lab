@@ -1,9 +1,9 @@
-# 0x127: acidSporeTime[9]
+# 0x11B: stormTimer
 
-| Name | acidSporeTime[9] |
+| Name | stormTimer |
 | ----| ------------ |
-| Offset | 0x127 |
+| Offset | 0x11B |
 | Type | u8 |
 | Mask | 0xFF000000 |
-| Description | 애시드 스포어 단계별 타이머 (갱신시 가장 낮은 시간을 가진 단계가 갱신됨) |<br>
+| Description | 스톰 타이머 (스톰 안에 있으면 적용) |<br>
 

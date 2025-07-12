@@ -1,9 +1,9 @@
-# 0x093: userActionFlags
+# 0x091: secondaryOrderTimer
 
-| Name | userActionFlags |
+| Name | secondaryOrderTimer |
 | ----| ------------ |
-| Offset | 0x093 |
+| Offset | 0x091 |
 | Type | u8 |
-| Mask | 0xFF000000 |
-| Description | 유저 행동 플래그, |= 4 (removeUnit 효과) |<br>
+| Mask | 0x0000FF00 |
+| Description | ??? 0~30 계속 순환 |<br>
 

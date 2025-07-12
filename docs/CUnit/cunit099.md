@@ -1,9 +1,9 @@
-# 0x14D: repulseAngle
+# 0x124: maelstromTimer
 
-| Name | repulseAngle |
+| Name | maelstromTimer |
 | ----| ------------ |
-| Offset | 0x14D |
+| Offset | 0x124 |
 | Type | u8 |
-| Mask | 0x0000FF00 |
-| Description | updated only when air unit is being pushed |<br>
+| Mask | 0x000000FF |
+| Description | 마엘스트롬 타이머 |<br>
 

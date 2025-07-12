@@ -1,9 +1,9 @@
-# 0x068: previousPlayerUnit
+# 0x066: _unknown_0x066
 
-| Name | previousPlayerUnit |
+| Name | _unknown_0x066 |
 | ----| ------------ |
-| Offset | 0x068 |
-| Type | BW::CUnit* |
-| Mask | 0xFFFFFFFF |
-| Description | prev (아군 유닛 중에서만) |<br>
+| Offset | 0x066 |
+| Type | u16 |
+| Mask | 0xFFFF0000 |
+| Description |  |<br>
 

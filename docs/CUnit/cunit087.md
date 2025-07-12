@@ -1,9 +1,9 @@
-# 0x121: parasiteFlags
+# 0x115: stimTimer
 
-| Name | parasiteFlags |
+| Name | stimTimer |
 | ----| ------------ |
-| Offset | 0x121 |
+| Offset | 0x115 |
 | Type | u8 |
 | Mask | 0x0000FF00 |
-| Description | 패러사이트 플래그 (어떤 플레이어가 걸었는지 비트로 구별) |<br>
+| Description | 스팀팩 타이머 |<br>
 

@@ -1,9 +1,9 @@
-# 0x117: lockdownTimer
+# 0x105: pathingFlags
 
-| Name | lockdownTimer |
+| Name | pathingFlags |
 | ----| ------------ |
-| Offset | 0x117 |
+| Offset | 0x105 |
 | Type | u8 |
-| Mask | 0xFF000000 |
-| Description | 락다운 타이머 |<br>
+| Mask | 0x0000FF00 |
+| Description | 0:공중유닛(패싱X) 1:일반지상(패싱사용) 3:비비는중 (출처: [야돈돈님](https://cafe.naver.com/edac/115099)) |<br>
 

@@ -1,9 +1,9 @@
-# 0x094: currentButtonSet
+# 0x092: AIActionFlag
 
-| Name | currentButtonSet |
+| Name | AIActionFlag |
 | ----| ------------ |
-| Offset | 0x094 |
-| Type | u16 |
-| Mask | 0x0000FFFF |
-| Description | 현재 버튼셋 |<br>
+| Offset | 0x092 |
+| Type | u8 |
+| Mask | 0x00FF0000 |
+| Description | AI 내에서만 사용 |<br>
 

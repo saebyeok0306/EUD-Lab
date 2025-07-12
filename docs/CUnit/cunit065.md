@@ -1,46 +1,67 @@
-# 0x0DC: statusFlags
+# 0x0C0: unionData1
 
-| Name | statusFlags |
+| Name | unionData1 |
 | ----| ------------ |
-| Offset | 0x0DC |
-| Type | u32 |
+| Offset | 0x0C0 |
+| Type | union |
 | Mask | 0xFFFFFFFF |
-| Description | 스테이터스 플래그, 상태 정보 |<br>
+| Description | union 형식으로 저장된 특수한 유닛 정보들 (마인 개수, 격납 유닛 정보들, 애드온 정보, 자원 정보, 기술/업그레이드 남은 시간, 업그레이드 중인 업그레이드/기술 번호 등) |<br>
 
-# Detail
+# vulture
 
 | Offset | Type | Mask | Name | Description |
 | -------| -----| ---- | -----| ------------ |
-| 00000001(0x1) | bit | 0x1 | Completed | 완성되었으면 1, 미완성 건물이나 변태중인 알/코쿤 등은 0 |
-| 00000010(0x2) | bit | 0x2 | Grounded Building | 지상에 있는 건물일 경우 1, 나머지 0 |
-| 00000100(0x4) | bit | 0x4 | In Air | 공중일 경우 1 |
-| 00001000(0x8) | bit | 0x8 | Checked for disabled | 라고 하는데 디시블이든 언파워든 변화가 없음 |
-| 00010000(0x10) | bit | 0x10 | Burrowed | 버로우 상태일 경우 1 |
-| 00100000(0x20) | bit | 0x20 | In Building | 건물(벙커)에 들어간 상태 |
-| 01000000(0x40) | bit | 0x40 | In Transport | 수송선 안에 들어간 상태 |
-| 10000000(0x80) | bit | 0x80 | Unknown1 |  |
-| 00000001(0x100) | bit | 0x100 | Require Detection | 디텍터(탐지기) 필요 상태 (클로킹 해제 도중에는 0) |
-| 00000010(0x200) | bit | 0x200 | Cloaked | 클로킹, 버로우 상태 (클로킹 되는 도중에는 0) |
-| 00000100(0x400) | bit | 0x400 | Doodad States Thing | 디시블, 언파워(동력 끊김) 상태이면 1 |
-| 00001000(0x800) | bit | 0x800 | Cloaking For Free | 마나 소비가 없는 클로킹 상태. (아비터 클로킹 필드 등) |
-| 00010000(0x1000) | bit | 0x1000 | Can Not Receive Orders | 명령을 받을 수 없는 상태 (버로우 도중, 건물 띄우거나 내리는 도중, 완성 모션 도중, 건물 짓기 시작하는 도중 등) |
-| 00100000(0x2000) | bit | 0x2000 | No Break Code Start | 명령을 무시하는 모션중이면 1 (건물 띄우거나 내릴때, 알에서 태어날 때, 발키리 공격 모션 등) |
-| 01000000(0x4000) | bit | 0x4000 | Unknown2 |  |
-| 10000000(0x8000) | bit | 0x8000 | CanNotAttack | 디스럽션 웹 안에 있는 상태 (공격 불가) |
-| 00000001(0x10000) | bit | 0x10000 | Can Move | 움직일 수 있으면 1, 아니면 0 (?) |
-| 00000010(0x20000) | bit | 0x20000 | Can Move | 움직일 수 있으면 1, 아니면 0 (?) |
-| 00000100(0x40000) | bit | 0x40000 | Ignore Tile Collision | 1이면 움직일 수 없음. 시즈모드한 탱크, 합체 중인 아콘/다크아콘, 버로우 해제 중인 저그 유닛, 저그 에그 등. 유닛 위에 CreateUnit, MoveUnit 등으로 인해 다른 유닛이 생겼을 때 아래에있던 유닛의 이 값이 잠시 1이 되는데 이 때문에 아래에 있던 유닛이 잠시 멈추면서 버벅이는 것. |
-| 00001000(0x80000) | bit | 0x80000 | Unit is Unmovable | 수송, 버로우 상태의 지상 유닛 |
-| 00010000(0x100000) | bit | 0x100000 | Is Normal | 지상 충돌 판정. 0이면 지형/다른 유닛, 건물 등을 모두 통과. 건물일 경우 1 |
-| 00100000(0x200000) | bit | 0x200000 | No Collide | 다른 지상유닛이 해당 유닛의 충돌 무시 (버로우, 비콘). |
-| 01000000(0x400000) | bit | 0x400000 | Unknown5 |  |
-| 10000000(0x800000) | bit | 0x800000 | Is Gathering | 자원 채취 판정. 유닛 통과 |
-| 00000001(0x1000000) | bit | 0x1000000 | Unknown6 |  |
-| 00000010(0x2000000) | bit | 0x2000000 | Unknown7 |  |
-| 00000100(0x4000000) | bit | 0x4000000 | Invincible | 무적 상태 |
-| 00001000(0x8000000) | bit | 0x8000000 | Holding Position | 자유 공격 상태. 1일 경우 지 꼴리는 적을 공격. 어택땅, 스탑, 홀드 상태 등에서 공격중일 경우 1. 강제 공격 중이거나 다른 명령중일때는 0. 벙커 내 유닛에게도 적용. |
-| 00010000(0x10000000) | bit | 0x10000000 | Speed upgrade | 발업/속업 상태 |
-| 00100000(0x20000000) | bit | 0x20000000 | Cooldown Upgrade | 공속 업그레이드 상태 |
-| 01000000(0x40000000) | bit | 0x40000000 | Is Hallucination | 할루시네이션 상태 |
-| 10000000(0x80000000) | bit | 0x80000000 | Is Self Destructing | 자폭중인 상태 (인페스티드 테란, 스커지, 스캐럽) |<br>
+| 0x0C0 | u8 | 0x000000FF | spiderMineCount | 남은 마인 개수 |<br>
+
+# carrier
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0C0 | BW::CUnit* | 0xFFFFFFFF | pInHanger | first child inside the hanger |
+| 0x0C4 | BW::CUnit* | 0xFFFFFFFF | pOutHanger | first child outside the hanger |
+| 0x0C8 | u8 | 0x000000FF | inHangerCount | number inside the hanger (used for scarab count) |
+| 0x0C9 | u8 | 0x0000FF00 | outHangerCount | number outside the hanger |<br>
+
+# fighter
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0C0 | BW::CUnit* | 0xFFFFFFFF | parent |  |
+| 0x0C4 | BW::CUnit* | 0xFFFFFFFF | prev |  |
+| 0x0C8 | BW::CUnit* | 0xFFFFFFFF | next |  |
+| 0x0CC | bool | 0x00000001 | inHanger |  |<br>
+
+# beacon
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0C0 | u32 | 0xFFFFFFFF | _unknown_00 |  |
+| 0x0C4 | u32 | 0xFFFFFFFF | _unknown_04 |  |
+| 0x0C8 | u32 | 0xFFFFFFFF | flagSpawnFrame | flag beacons, the frame that the flag will spawn |<br>
+
+# building
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0C0 | BW::CUnit* | 0xFFFFFFFF | addon |  |
+| 0x0C4 | u16 | 0x0000FFFF | addon |  |
+| 0x0C6 | u16 | 0xFFFF0000 | upgradeResearchTime |  |
+| 0x0C8 | u8 | 0x000000FF | techType |  |
+| 0x0C9 | u8 | 0x0000FF00 | upgradeType |  |
+| 0x0CA | u8 | 0x00FF0000 | larvaTimer |  |
+| 0x0CB | u8 | 0xFF000000 | landingTimer |  |
+| 0x0CC | u8 | 0x000000FF | creepTimer |  |
+| 0x0CD | u8 | 0x0000FF00 | upgradeLevel |  |
+| 0x0CE | u16 | 0xFFFF0000 | __E |  |<br>
+
+# worker
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0C0 | BW::CUnit* | 0xFFFFFFFF | pPowerup |  |
+| 0x0C4 | points | 0xFFFFFFFF | targetResource |  |
+| 0x0C8 | BW::CUnit* | 0xFFFFFFFF | targetResourceUnit |  |
+| 0x0CC | u16 | 0x0000FFFF | repairResourceLossTimer |  |
+| 0x0CE | bool | 0x00010000 | isCarryingSomething | There is a "ubIsHarvesting" somewhere |
+| 0x0CF | u8 | 0xFF000000 | resourceCarryCount |  |<br>
 

@@ -1,23 +1,9 @@
-# 0x0F8: Rally XY
+# 0x0E0: resourceType
 
-| Name | Rally XY |
+| Name | resourceType |
 | ----| ------------ |
-| Offset | 0x0F8 |
-| Type | union |
-| Mask | 0xFFFFFFFF |
-| Description | 랠리 x,y좌표(각 2바이트) (랠리가 있는 유닛에게만 적용) |<br>
-
-# rally
-
-| Offset | Type | Mask | Name | Description |
-| -------| -----| ---- | -----| ------------ |
-| 0x0F8 | points | 0xFFFFFFFF | position |  |
-| 0x0FC | BW::CUnit* | 0xFFFFFFFF | unit |  |<br>
-
-# PsiProvider
-
-| Offset | Type | Mask | Name | Description |
-| -------| -----| ---- | -----| ------------ |
-| 0x0F8 | BW::CUnit* | 0xFFFFFFFF | prevPsiProvider |  |
-| 0x0FC | BW::CUnit* | 0xFFFFFFFF | nextPsiProvider |  |<br>
+| Offset | 0x0E0 |
+| Type | u8 |
+| Mask | 0x000000FF |
+| Description | 일꾼이 보유한 광물 종류 |<br>
 

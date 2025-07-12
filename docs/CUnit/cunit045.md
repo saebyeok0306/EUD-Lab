@@ -1,9 +1,9 @@
-# 0x08F: killCount
+# 0x08C: _unknown_0x08C
 
-| Name | killCount |
+| Name | _unknown_0x08C |
 | ----| ------------ |
-| Offset | 0x08F |
-| Type | u8 |
-| Mask | 0xFF000000 |
-| Description | 킬 수 |<br>
+| Offset | 0x08C |
+| Type | u16 |
+| Mask | 0x0000FFFF |
+| Description |  |<br>
 

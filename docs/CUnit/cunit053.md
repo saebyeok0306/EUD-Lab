@@ -1,9 +1,9 @@
-# 0x098: buildQueue[5]
+# 0x096: isCloaked
 
-| Name | buildQueue[5] |
+| Name | isCloaked |
 | ----| ------------ |
-| Offset | 0x098 |
-| Type | u16 |
-| Mask | 0x0000FFFF |
-| Description | 생산 대기열에서 생산중인 유닛의 구조오프셋 |<br>
+| Offset | 0x096 |
+| Type | bool |
+| Mask | 0x00010000 |
+| Description | 클로킹 여부 true=1, false=0 |<br>
 

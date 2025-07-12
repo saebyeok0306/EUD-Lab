@@ -1,9 +1,9 @@
-# 0x115: stimTimer
+# 0x100: path
 
-| Name | stimTimer |
+| Name | path |
 | ----| ------------ |
-| Offset | 0x115 |
-| Type | u8 |
-| Mask | 0x0000FF00 |
-| Description | 스팀팩 타이머 |<br>
+| Offset | 0x100 |
+| Type | BW::Path* |
+| Mask | 0xFFFFFFFF |
+| Description | officially "unitPath" |<br>
 

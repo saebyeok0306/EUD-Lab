@@ -1,9 +1,9 @@
-# 0x116: ensnareTimer
+# 0x104: pathingCollisionInterval
 
-| Name | ensnareTimer |
+| Name | pathingCollisionInterval |
 | ----| ------------ |
-| Offset | 0x116 |
+| Offset | 0x104 |
 | Type | u8 |
-| Mask | 0x00FF0000 |
-| Description | 인스네어 타이머 |<br>
+| Mask | 0x000000FF |
+| Description |  |<br>
 

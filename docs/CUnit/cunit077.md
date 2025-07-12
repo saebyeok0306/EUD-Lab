@@ -1,9 +1,23 @@
-# 0x114: defenseMatrixTimer
+# 0x0F8: Rally XY
 
-| Name | defenseMatrixTimer |
+| Name | Rally XY |
 | ----| ------------ |
-| Offset | 0x114 |
-| Type | u8 |
-| Mask | 0x000000FF |
-| Description | 디펜스 매트릭스 타이머 |<br>
+| Offset | 0x0F8 |
+| Type | union |
+| Mask | 0xFFFFFFFF |
+| Description | 랠리 x,y좌표(각 2바이트) (랠리가 있는 유닛에게만 적용) |<br>
+
+# rally
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0F8 | points | 0xFFFFFFFF | position |  |
+| 0x0FC | BW::CUnit* | 0xFFFFFFFF | unit |  |<br>
+
+# PsiProvider
+
+| Offset | Type | Mask | Name | Description |
+| -------| -----| ---- | -----| ------------ |
+| 0x0F8 | BW::CUnit* | 0xFFFFFFFF | prevPsiProvider |  |
+| 0x0FC | BW::CUnit* | 0xFFFFFFFF | nextPsiProvider |  |<br>
 

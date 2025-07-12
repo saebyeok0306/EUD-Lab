@@ -1,9 +1,9 @@
-# 0x0AE: previousHP
+# 0x0AA: shieldGain
 
-| Name | previousHP |
+| Name | shieldGain |
 | ----| ------------ |
-| Offset | 0x0AE |
+| Offset | 0x0AA |
 | Type | u16 |
 | Mask | 0xFFFF0000 |
-| Description | 유닛이 변할때의 이전 체력 (드론 건물 건설시 드론 체력이 previousHP에 저장됨) |<br>
+| Description | 건설 중 증가하는 쉴드량 |<br>
 

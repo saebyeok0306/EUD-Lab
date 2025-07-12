@@ -1,9 +1,9 @@
-# 0x126: acidSporeCount
+# 0x11A: plagueTimer
 
-| Name | acidSporeCount |
+| Name | plagueTimer |
 | ----| ------------ |
-| Offset | 0x126 |
+| Offset | 0x11A |
 | Type | u8 |
 | Mask | 0x00FF0000 |
-| Description | 애시드 스포어 중첩 수 |<br>
+| Description | 플레이그 타이머 |<br>
 

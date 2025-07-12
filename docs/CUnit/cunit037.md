@@ -1,9 +1,9 @@
-# 0x070: subUnit
+# 0x06C: nextPlayerUnit
 
-| Name | subUnit |
+| Name | nextPlayerUnit |
 | ----| ------------ |
-| Offset | 0x070 |
+| Offset | 0x06C |
 | Type | BW::CUnit* |
 | Mask | 0xFFFFFFFF |
-| Description | 부가 유닛 구조오프셋 |<br>
+| Description | next (아군 유닛 중에서만) |<br>
 

@@ -1,9 +1,9 @@
-# 0x07C: autoTargetUnit
+# 0x070: subUnit
 
-| Name | autoTargetUnit |
+| Name | subUnit |
 | ----| ------------ |
-| Offset | 0x07C |
+| Offset | 0x070 |
 | Type | BW::CUnit* |
 | Mask | 0xFFFFFFFF |
-| Description | 피격시 자동으로 공격할 유닛의 구조오프셋 |<br>
+| Description | 부가 유닛 구조오프셋 |<br>
 

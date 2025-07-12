@@ -1,9 +1,9 @@
-# 0x0A7: buildingOverlayState
+# 0x0A5: uniquenessIdentifier
 
-| Name | buildingOverlayState |
+| Name | uniquenessIdentifier |
 | ----| ------------ |
-| Offset | 0x0A7 |
+| Offset | 0x0A5 |
 | Type | u8 |
-| Mask | 0xFF000000 |
-| Description | 건물 오버레이 상태 (현재 불타는 이미지 상태) |<br>
+| Mask | 0x0000FF00 |
+| Description | 현재 유닛을 구별하는데 사용된 바이트 수 (?) |<br>
 

@@ -1,9 +1,9 @@
-# 0x11A: plagueTimer
+# 0x108: contourBounds
 
-| Name | plagueTimer |
+| Name | contourBounds |
 | ----| ------------ |
-| Offset | 0x11A |
-| Type | u8 |
-| Mask | 0x00FF0000 |
-| Description | 플레이그 타이머 |<br>
+| Offset | 0x108 |
+| Type | rect |
+| Mask | 0xFFFFFFFF |
+| Description | a rect that specifies the closest contour (collision) points |<br>
 

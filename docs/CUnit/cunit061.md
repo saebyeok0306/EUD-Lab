@@ -1,9 +1,9 @@
-# 0x0AC: remainingBuildTime
+# 0x0A8: hpGain
 
-| Name | remainingBuildTime |
+| Name | hpGain |
 | ----| ------------ |
-| Offset | 0x0AC |
+| Offset | 0x0A8 |
 | Type | u16 |
 | Mask | 0x0000FFFF |
-| Description | 남은 건설 시간 |<br>
+| Description | 수리, 건설시 증가하는 체력량 |<br>
 

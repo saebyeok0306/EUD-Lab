@@ -1,9 +1,9 @@
-# 0x125: _unused_0x125
+# 0x119: stasisTimer
 
-| Name | _unused_0x125 |
+| Name | stasisTimer |
 | ----| ------------ |
-| Offset | 0x125 |
+| Offset | 0x119 |
 | Type | u8 |
 | Mask | 0x0000FF00 |
-| Description |  |<br>
+| Description | 스테이시스 필드 타이머 |<br>
 

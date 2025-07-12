@@ -1,9 +1,9 @@
-# 0x14F: bRepMtxY
+# 0x126: acidSporeCount
 
-| Name | bRepMtxY |
+| Name | acidSporeCount |
 | ----| ------------ |
-| Offset | 0x14F |
+| Offset | 0x126 |
 | Type | u8 |
-| Mask | 0xFF000000 |
-| Description | repulse matrix Y (mapsizex/1.5 max) |<br>
+| Mask | 0x00FF0000 |
+| Description | 애시드 스포어 중첩 수 |<br>
 

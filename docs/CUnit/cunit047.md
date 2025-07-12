@@ -1,9 +1,9 @@
-# 0x091: secondaryOrderTimer
+# 0x08F: killCount
 
-| Name | secondaryOrderTimer |
+| Name | killCount |
 | ----| ------------ |
-| Offset | 0x091 |
+| Offset | 0x08F |
 | Type | u8 |
-| Mask | 0x0000FF00 |
-| Description | ??? |<br>
+| Mask | 0xFF000000 |
+| Description | 유닛의 킬 수 |<br>
 

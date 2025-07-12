@@ -1,9 +1,9 @@
-# 0x0A8: hpGain
+# 0x0A6: secondaryOrderID
 
-| Name | hpGain |
+| Name | secondaryOrderID |
 | ----| ------------ |
-| Offset | 0x0A8 |
-| Type | u16 |
-| Mask | 0x0000FFFF |
-| Description | 수리, 건설시 증가하는 체력량 |<br>
+| Offset | 0x0A6 |
+| Type | u8 |
+| Mask | 0x00FF0000 |
+| Description | 두번째 명령 (아비터 클로킹, 크립 확장, 라바 생성 등) |<br>
 

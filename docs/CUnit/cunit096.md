@@ -1,9 +1,9 @@
-# 0x13A: groundStrength
+# 0x121: parasiteFlags
 
-| Name | groundStrength |
+| Name | parasiteFlags |
 | ----| ------------ |
-| Offset | 0x13A |
-| Type | u16 |
-| Mask | 0xFFFF0000 |
-| Description |  |<br>
+| Offset | 0x121 |
+| Type | u8 |
+| Mask | 0x0000FF00 |
+| Description | 패러사이트 플래그 (어떤 플레이어가 걸었는지 비트로 구별) |<br>
 

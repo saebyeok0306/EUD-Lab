@@ -1,9 +1,9 @@
-# 0x0A5: uniquenessIdentifier
+# 0x0A2: energy
 
-| Name | uniquenessIdentifier |
+| Name | energy |
 | ----| ------------ |
-| Offset | 0x0A5 |
-| Type | u8 |
-| Mask | 0x0000FF00 |
-| Description | 현재 유닛을 구별하는데 사용된 바이트 수 (?) |<br>
+| Offset | 0x0A2 |
+| Type | u16 |
+| Mask | 0xFFFF0000 |
+| Description | 마나 (*256 되어있음) |<br>
 

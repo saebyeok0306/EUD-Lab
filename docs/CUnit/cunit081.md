@@ -1,9 +1,9 @@
-# 0x118: irradiateTimer
+# 0x106: _unused_0x106
 
-| Name | irradiateTimer |
+| Name | _unused_0x106 |
 | ----| ------------ |
-| Offset | 0x118 |
+| Offset | 0x106 |
 | Type | u8 |
-| Mask | 0x000000FF |
-| Description | 이레디에이트 타이머 |<br>
+| Mask | 0x00FF0000 |
+| Description |  |<br>
 

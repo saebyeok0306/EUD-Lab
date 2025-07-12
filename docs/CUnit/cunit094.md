@@ -1,9 +1,9 @@
-# 0x134: pAI
+# 0x11C: irradiatedBy
 
-| Name | pAI |
+| Name | irradiatedBy |
 | ----| ------------ |
-| Offset | 0x134 |
-| Type | void* |
+| Offset | 0x11C |
+| Type | BW::CUnit* |
 | Mask | 0xFFFFFFFF |
-| Description | pointer to AI class, we're not using this though |<br>
+| Description | 리마스터 미지원 |<br>
 

@@ -1,9 +1,9 @@
-# 0x123: isBlind
+# 0x117: lockdownTimer
 
-| Name | isBlind |
+| Name | lockdownTimer |
 | ----| ------------ |
-| Offset | 0x123 |
+| Offset | 0x117 |
 | Type | u8 |
 | Mask | 0xFF000000 |
-| Description | 블라인드 여부 (1 << targetPlayerId) |<br>
+| Description | 락다운 타이머 |<br>
 

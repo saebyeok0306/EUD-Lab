@@ -1,9 +1,9 @@
-# 0x120: irradiatePlayerID
+# 0x114: defenseMatrixTimer
 
-| Name | irradiatePlayerID |
+| Name | defenseMatrixTimer |
 | ----| ------------ |
-| Offset | 0x120 |
+| Offset | 0x114 |
 | Type | u8 |
 | Mask | 0x000000FF |
-| Description | 이레디에이트를 건 플레이어 ID |<br>
+| Description | 디펜스 매트릭스 타이머 |<br>
 

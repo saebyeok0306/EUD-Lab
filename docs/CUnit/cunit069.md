@@ -1,9 +1,9 @@
-# 0x100: path
+# 0x0E1: wireframeRandomizer
 
-| Name | path |
+| Name | wireframeRandomizer |
 | ----| ------------ |
-| Offset | 0x100 |
-| Type | BW::Path* |
-| Mask | 0xFFFFFFFF |
-| Description | officially "unitPath" |<br>
+| Offset | 0x0E1 |
+| Type | u8 |
+| Mask | 0x0000FF00 |
+| Description |  |<br>
 

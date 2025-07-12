@@ -1,9 +1,9 @@
-# 0x104: pathingCollisionInterval
+# 0x0E2: secondaryOrderState
 
-| Name | pathingCollisionInterval |
+| Name | secondaryOrderState |
 | ----| ------------ |
-| Offset | 0x104 |
+| Offset | 0x0E2 |
 | Type | u8 |
-| Mask | 0x000000FF |
+| Mask | 0x00FF0000 |
 | Description |  |<br>
 

@@ -1,9 +1,9 @@
-# 0x0A2: energy
+# 0x097: movementState
 
-| Name | energy |
+| Name | movementState |
 | ----| ------------ |
-| Offset | 0x0A2 |
-| Type | u16 |
-| Mask | 0xFFFF0000 |
-| Description | 마나 (*256 되어있음) |<br>
+| Offset | 0x097 |
+| Type | u8 |
+| Mask | 0xFF000000 |
+| Description | 움직임 상태 |<br>
 

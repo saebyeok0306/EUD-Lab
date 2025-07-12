@@ -1,9 +1,9 @@
-# 0x138: airStrength
+# 0x120: irradiatePlayerID
 
-| Name | airStrength |
+| Name | irradiatePlayerID |
 | ----| ------------ |
-| Offset | 0x138 |
-| Type | u16 |
-| Mask | 0x0000FFFF |
-| Description |  |<br>
+| Offset | 0x120 |
+| Type | u8 |
+| Mask | 0x000000FF |
+| Description | 이레디에이트를 건 플레이어 ID |<br>
 

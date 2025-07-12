@@ -1,9 +1,9 @@
-# 0x119: stasisTimer
+# 0x107: isBeingHealed
 
-| Name | stasisTimer |
+| Name | isBeingHealed |
 | ----| ------------ |
-| Offset | 0x119 |
-| Type | u8 |
-| Mask | 0x0000FF00 |
-| Description | 스테이시스 필드 타이머 |<br>
+| Offset | 0x107 |
+| Type | bool |
+| Mask | 0x01000000 |
+| Description | 1 if a medic is currently healing this unit |<br>
 
