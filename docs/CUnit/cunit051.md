@@ -4,6 +4,6 @@
 | ----| ------------ |
 | Offset | 0x096 |
 | Type | bool |
-| Mask | 0xFFFFFFFF |
+| Mask | 0x00010000 |
 | Description | 클로킹 여부 |<br>
 

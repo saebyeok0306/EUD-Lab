@@ -29,7 +29,7 @@
 | 0x0C0 | BW::CUnit* | 0xFFFFFFFF | parent |  |
 | 0x0C4 | BW::CUnit* | 0xFFFFFFFF | prev |  |
 | 0x0C8 | BW::CUnit* | 0xFFFFFFFF | next |  |
-| 0x0CC | bool | 0xFFFFFFFF | inHanger |  |<br>
+| 0x0CC | bool | 0x00000001 | inHanger |  |<br>
 
 # beacon
 
@@ -62,6 +62,6 @@
 | 0x0C4 | points | 0xFFFFFFFF | targetResource |  |
 | 0x0C8 | BW::CUnit* | 0xFFFFFFFF | targetResourceUnit |  |
 | 0x0CC | u16 | 0x0000FFFF | repairResourceLossTimer |  |
-| 0x0CE | bool | 0xFFFFFFFF | isCarryingSomething | There is a "ubIsHarvesting" somewhere |
+| 0x0CE | bool | 0x00010000 | isCarryingSomething | There is a "ubIsHarvesting" somewhere |
 | 0x0CF | u8 | 0xFF000000 | resourceCarryCount |  |<br>
 

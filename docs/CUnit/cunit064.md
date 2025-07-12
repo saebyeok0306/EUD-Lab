@@ -41,7 +41,7 @@
 | Offset | Type | Mask | Name | Description |
 | -------| -----| ---- | -----| ------------ |
 | 0x0D0 | BW::CUnit* | 0xFFFFFFFF | pNuke | attached nuke |
-| 0x0D4 | bool | 0xFFFFFFFF | bReady |  |<br>
+| 0x0D4 | bool | 0x00000001 | bReady |  |<br>
 
 # hatchery
 
