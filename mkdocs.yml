@@ -56,7 +56,11 @@ theme:
 
 plugins:
   - blog:
+      enabled: true
       post_url_date_format: yyyy.MM.dd
+      authors_profiles: true
+      authors_file: blog/.authors.yml
+      archive_name: Archive
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
@@ -109,6 +113,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.critic
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
