@@ -81,6 +81,7 @@ plugins:
         - scripts/gen_nav_list.py
   - meta:
       meta_file: .meta.yml
+  - glightbox
 
 extra:
   status:
@@ -115,6 +116,7 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.critic
   - pymdownx.caret
+  - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
   - attr_list
