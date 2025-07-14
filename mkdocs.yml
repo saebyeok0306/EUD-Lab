@@ -81,7 +81,9 @@ plugins:
         - scripts/gen_nav_list.py
   - meta:
       meta_file: .meta.yml
-  - glightbox
+  - glightbox:
+      skip_classes:
+        - skip-glightbox
 
 extra:
   status:

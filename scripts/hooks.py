@@ -51,7 +51,7 @@ def on_page_markdown(markdown, page, config, files):
                 # 아바타 이미지를 작게 표시하고, 클릭 시 GitHub 프로필로 이동
                 avatar_html = f"""
                 <a href="{html_url}" class="contributor-link" target="_blank" rel="noopener">
-                    <img src="{avatar_url}&s=96" class="contributor-avatar" alt="{login}">
+                    <img src="{avatar_url}&s=96" class="skip-glightbox contributor-avatar" alt="{login}">
                     <span class="tooltip">@{login}</span>
                 </a>
                 """
