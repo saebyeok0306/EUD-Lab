@@ -51,7 +51,7 @@
 
     ### EUD Draft
 
-    <mark>:fontawesome-solid-code: 트리거왕</mark>님께서 개발 및 현재는 <mark>:fontawesome-solid-code: 아르타니스</mark>님께서 이어서 개발하고 있는 툴입니다. `Eudplib`, `Epscript`을 활용해서 작성한 코드파일을 유즈맵으로 컴파일하기 위해 필요합니다.  
+    <mark>:fontawesome-solid-code: 트리거왕</mark>님께서 개발 및 현재는 <mark>:fontawesome-solid-code: 아르타니스</mark>님께서 이어서 개발하고 있는 툴입니다. `Eudplib`, `epScript`을 활용해서 작성한 코드파일을 유즈맵으로 컴파일하기 위해 필요합니다.  
     
     [:fontawesome-solid-link: 링크](https://github.com/armoha/euddraft/releases){ .md-button }
     [:fontawesome-solid-link: 패치노트](https://github.com/armoha/euddraft/blob/master/CHANGELOG_ko.md){ .md-button }
@@ -60,7 +60,7 @@
 
     ### VS Code (Visual Studio Code) IDE
 
-    오픈소스 코드 에디터입니다. EUD Editor3 환경에서 `Eudplib`, `Epscript`와 같이 프로그래밍 언어를 활용해서 개발할 경우 필요합니다. 확장프로그램(Extensions)에서 <mark>:fontawesome-solid-code: 함주한</mark>님의 eps-server를 별도로 설치해서 쓰셔야 합니다.  
+    오픈소스 코드 에디터입니다. EUD Editor3 환경에서 `Eudplib`, `epScript`와 같이 프로그래밍 언어를 활용해서 개발할 경우 필요합니다. 확장프로그램(Extensions)에서 <mark>:fontawesome-solid-code: 함주한</mark>님의 eps-server를 별도로 설치해서 쓰셔야 합니다.  
     
     [:fontawesome-solid-link: 링크](https://code.visualstudio.com/){ .md-button }
 
