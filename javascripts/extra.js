@@ -245,6 +245,7 @@ function hideLoader(loaderId, messageId) {
     message.classList.remove('hidden');
 }
 
+
 function AddAI() {
     const input = document.getElementById("user-question");
     const button = document.getElementById("submit-question");
@@ -268,7 +269,12 @@ function AddAI() {
             alert("질문을 입력하세요.");
             return;
         }
+        if (button.disabled) {
+            return;
+        }
 
+        input.disabled = true;
+        button.disabled = true;
         answerBox.style.display = "block";
         showLoader('typing', 'answer-content');
 
@@ -279,13 +285,16 @@ function AddAI() {
         })
             .then(res => res.json())
             .then(data => {
-                hideLoader('typing', 'answer-content');
                 const html = marked.parse(data?.message || "오류가 발생했습니다."); // Markdown → HTML 변환
                 answerContent.innerHTML = html;
             })
             .catch(err => {
-                hideLoader('typing', 'answer-content');
                 answerContent.innerHTML = `<p>에러: ${err.message}</p>`;
+            })
+            .finally(() => {
+                hideLoader('typing', 'answer-content');
+                button.disabled = false;
+                input.disabled = false;
             });
     });
 }
