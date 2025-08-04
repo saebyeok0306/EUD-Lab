@@ -195,3 +195,49 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
+.typing-loader {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 20px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.hidden {
+    display: none;
+}
+
+.typing-loader::before {
+    content: "AI가 응답을 생성중입니다";
+    color: #666;
+    font-size: 14px;
+}
+
+.typing-dots {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #999;
+    animation: typing-blink 1.4s infinite;
+}
+
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-blink {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+}
+
+#user-question {
+    border-radius: 15px;
+    background-color: rgba(119,119,119,0.3);
+}

@@ -1,12 +1,14 @@
 // 페이지 로드가 완료되면 실행
 document.addEventListener('DOMContentLoaded', function() {
     TitleLink();
-    AddViewCount();
     if (window.location.pathname.includes('/Address')) {
         AddAddressModal();
     } else if (window.location.pathname.includes('/CUnit')) {
         AddCUnitModal();
+    } else if (window.location.pathname.includes('/AI')) {
+        AddAI();
     }
+    AddViewCount();
 });
 
 function TitleLink() {
@@ -36,7 +38,7 @@ function AddAddressModal() {
     const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgIcon.setAttribute('viewBox', '0 0 448 512');
     svgIcon.innerHTML = '<path d="M96 0C43 0 0 43 0 96L0 416c0 53 43 96 96 96l288 0 32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32L384 0 96 0zm0 384l256 0 0 64L96 448c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16zm16 48l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>';
-    svgIcon.classList.add('modal-header-icon'); // 스타일링을 위한 클래스 추가 (선택 사항)
+    svgIcon.classList.add('modal-header-icon');
 
 
     const modalHeader = document.createElement('h2');
@@ -57,15 +59,11 @@ function AddAddressModal() {
     modalContent.appendChild(modalList);
     modal.appendChild(modalContent);
 
-    // 버튼과 모달을 body에 추가 (버튼은 원하는 위치에 추가하도록 수정 가능)
-    // 예: 특정 div에 추가
     const targetElement = document.querySelector('.md-content__inner'); // 본문 영역에 버튼 추가
     if (targetElement) {
         targetElement.insertBefore(openModalButton, targetElement.firstChild);
     }
     document.body.appendChild(modal);
-
-    // --- 이벤트 리스너 설정 ---
 
     // '목록 보기' 버튼 클릭 시
     openModalButton.addEventListener('click', function() {
@@ -122,7 +120,7 @@ function AddCUnitModal() {
     const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgIcon.setAttribute('viewBox', '0 0 448 512');
     svgIcon.innerHTML = '<path d="M96 0C43 0 0 43 0 96L0 416c0 53 43 96 96 96l288 0 32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32L384 0 96 0zm0 384l256 0 0 64L96 448c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16zm16 48l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>';
-    svgIcon.classList.add('modal-header-icon'); // 스타일링을 위한 클래스 추가 (선택 사항)
+    svgIcon.classList.add('modal-header-icon');
 
     const modalHeader = document.createElement('h2');
     modalHeader.className = 'custom-modal-header';
@@ -142,15 +140,11 @@ function AddCUnitModal() {
     modalContent.appendChild(modalList);
     modal.appendChild(modalContent);
 
-    // 버튼과 모달을 body에 추가 (버튼은 원하는 위치에 추가하도록 수정 가능)
-    // 예: 특정 div에 추가
     const targetElement = document.querySelector('.md-content__inner'); // 본문 영역에 버튼 추가
     if (targetElement) {
         targetElement.insertBefore(openModalButton, targetElement.firstChild);
     }
     document.body.appendChild(modal);
-
-    // --- 이벤트 리스너 설정 ---
 
     // '목록 보기' 버튼 클릭 시
     openModalButton.addEventListener('click', function() {
@@ -219,21 +213,79 @@ function AddViewCount() {
 
     fetch(apiUrl)
         .then(response => {
-            // 응답이 성공적이지 않으면 여기서 중단합니다.
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             return response.json();
         })
         .then(data => {
-            // 응답받은 데이터에서 조회수(count)를 추출합니다.
             const viewCount = data.data.count;
 
             viewCountText.textContent = `조회수 ${viewCount}`;
         })
         .catch(error => {
-            // API 호출에 실패하면 콘솔에 에러를 출력합니다.
             console.error('Error fetching view count:', error);
-            // 실패 시 사용자에게는 아무것도 표시하지 않거나, 에러 메시지를 표시할 수 있습니다.
         });
+}
+
+// 기본 로더 제어 함수
+function showLoader(loaderId, messageId) {
+    const loader = document.getElementById(loaderId);
+    const message = document.getElementById(messageId);
+
+    loader.classList.remove('hidden');
+    message.classList.add('hidden');
+}
+
+function hideLoader(loaderId, messageId) {
+    const loader = document.getElementById(loaderId);
+    const message = document.getElementById(messageId);
+
+    loader.classList.add('hidden');
+    message.classList.remove('hidden');
+}
+
+function AddAI() {
+    const input = document.getElementById("user-question");
+    const button = document.getElementById("submit-question");
+    const answerBox = document.getElementById("answer-box");
+    const answerContent = document.getElementById("answer-content");
+
+    if (!input || !button || !answerBox || !answerContent) {
+        return;
+    }
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            button.click();
+        }
+    })
+
+    button.addEventListener("click", () => {
+        const question = input.value.trim();
+
+        if (!question) {
+            alert("질문을 입력하세요.");
+            return;
+        }
+
+        answerBox.style.display = "block";
+        showLoader('typing', 'answer-content');
+
+        fetch("https://eudai.devlog.run/api/v1/llm/question", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ "message":question })
+        })
+            .then(res => res.json())
+            .then(data => {
+                hideLoader('typing', 'answer-content');
+                const html = marked.parse(data?.message || "오류가 발생했습니다."); // Markdown → HTML 변환
+                answerContent.innerHTML = html;
+            })
+            .catch(err => {
+                hideLoader('typing', 'answer-content');
+                answerContent.innerHTML = `<p>에러: ${err.message}</p>`;
+            });
+    });
 }
