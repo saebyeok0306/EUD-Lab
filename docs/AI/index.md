@@ -10,7 +10,7 @@
 <div id="question-box" style="margin-top: 1em; margin-bottom: 1em;">
   <label for="user-question"><strong>질문을 입력하세요:</strong></label><br>
   <input type="text" id="user-question" class="md-search__input" placeholder="" style="width: 60%; padding: 8px; margin-top: 5px;" />
-  <button id="submit-question" class="md-button" style="padding: 8px 12px; margin-left: 10px;">제출</button>
+  <button id="submit-question" class="md-button" style="padding: 8px 12px; margin-left: 10px;">보내기</button>
 </div>
 
 <div id="answer-box" style="margin-top: 1.5em; margin-bottom: 1em; display: none;">
