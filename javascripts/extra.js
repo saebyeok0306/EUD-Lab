@@ -255,6 +255,14 @@ function AddAI() {
     if (!input || !button || !answerBox || !answerContent) {
         return;
     }
+    
+    const last = localStorage.getItem("last-question");
+    if (last) {
+        const lastQuestion = JSON.parse(last);
+        input.value = lastQuestion.question;
+        answerBox.style.display = "block";
+        answerContent.innerHTML = lastQuestion.answer;
+    }
 
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
@@ -287,6 +295,7 @@ function AddAI() {
             .then(data => {
                 const html = marked.parse(data?.message || "오류가 발생했습니다."); // Markdown → HTML 변환
                 answerContent.innerHTML = html;
+                localStorage.setItem("last-question", JSON.stringify({ question: question, answer: html }));
             })
             .catch(err => {
                 answerContent.innerHTML = `<p>에러: ${err.message}</p>`;
