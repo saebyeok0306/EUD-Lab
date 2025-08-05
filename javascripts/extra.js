@@ -293,7 +293,10 @@ function AddAI() {
         })
             .then(res => res.json())
             .then(data => {
-                const html = marked.parse(data?.message || "오류가 발생했습니다."); // Markdown → HTML 변환
+                const message = data?.message;
+                let html = marked.parse(message?.answer || "오류가 발생했습니다."); // Markdown → HTML 변환
+                html += `\n\n${message?.reference || ""}\n${message?.usage || ""}`
+
                 answerContent.innerHTML = html;
                 localStorage.setItem("last-question", JSON.stringify({ question: question, answer: html }));
             })
