@@ -359,8 +359,7 @@ function AddAI() {
         answerBox.style.display = "block";
         showLoader('typing', 'answer-content');
 
-        // fetch("https://eudai.devlog.run/api/v1/llm/question", {
-        fetch("http://localhost:8120/api/v1/llm/question", {
+        fetch("https://eudai.devlog.run/api/v1/llm/question", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "message":question })
