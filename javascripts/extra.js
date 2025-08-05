@@ -246,15 +246,88 @@ function hideLoader(loaderId, messageId) {
 }
 
 
+function AddHistory(history) {
+    history.innerHTML = "";
+    const input = document.getElementById("user-question");
+    const answerBox = document.getElementById("answer-box");
+    const answerContent = document.getElementById("answer-content");
+
+
+    const historyJson = localStorage.getItem("history") || "[]";
+    const historyList = JSON.parse(historyJson);
+
+    const historyTop = document.createElement('h3');
+    historyTop.textContent = `History (${historyList.length})`;
+    history.appendChild(historyTop);
+
+    if (historyList.length > 0) {
+        for (let i = 0; i < historyList.length; i++) {
+            const historyContent = historyList[i];
+            const historyWrapper = document.createElement('div');
+            historyWrapper.style.display = "flex";
+
+            const historyRemover = document.createElement('div');
+            historyRemover.textContent = "X";
+            historyRemover.style.marginLeft = "10px";
+            historyRemover.style.marginTop = ".625em";
+            historyRemover.style.color = "var(--md-typeset-a-color)";
+            historyRemover.style.cursor = "pointer";
+            // historyRemover.style.fontSize = "0.8rem";
+            historyRemover.dataset.historyId = i.toString();
+
+            // 👉 삭제 기능
+            historyRemover.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const historyId = parseInt(e.target.dataset.historyId);
+                historyList.splice(historyId, 1); // 해당 항목 제거
+                localStorage.setItem("history", JSON.stringify(historyList));
+                AddHistory(history); // 다시 렌더링
+            });
+
+            const historyItem = document.createElement('a');
+            historyItem.href = "#";
+            historyItem.className = "md-nav__link";
+            historyItem.dataset.historyId = i.toString();
+            historyItem.textContent = historyContent["question"];
+
+            historyItem.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const historyId = e.target.dataset.historyId;
+                const content = historyList[historyId];
+                console.log(content);
+                input.value = content["question"];
+                answerBox.style.display = "block";
+                answerContent.innerHTML = content["answer"];
+            });
+
+            // 요소 조립
+            historyWrapper.appendChild(historyItem);
+            historyWrapper.appendChild(historyRemover);
+            history.appendChild(historyWrapper);
+        }
+    }
+    else {
+        const historyItem = document.createElement('div');
+        historyItem.textContent = "히스토리가 비어있습니다.";
+        history.appendChild(historyItem);
+    }
+}
+
+
 function AddAI() {
+    const historyMaxSize = 20;
     const input = document.getElementById("user-question");
     const button = document.getElementById("submit-question");
     const answerBox = document.getElementById("answer-box");
     const answerContent = document.getElementById("answer-content");
+    const nav = document.getElementsByClassName("md-nav--secondary");
 
-    if (!input || !button || !answerBox || !answerContent) {
+    if (!input || !button || !answerBox || !answerContent || !nav.length) {
         return;
     }
+
+    const history = nav[0];
+    AddHistory(history);
     
     const last = localStorage.getItem("last-question");
     if (last) {
@@ -299,6 +372,20 @@ function AddAI() {
 
                 answerContent.innerHTML = html;
                 localStorage.setItem("last-question", JSON.stringify({ question: question, answer: html }));
+
+                const historyJson = localStorage.getItem("history") || "[]";
+                const historyList = JSON.parse(historyJson);
+                if (historyList.length > historyMaxSize) {
+                    historyList.pop();
+                }
+
+                historyList.unshift({
+                    "question": question,
+                    "answer": html
+                });
+                localStorage.setItem("history", JSON.stringify(historyList));
+
+                AddHistory(history);
             })
             .catch(err => {
                 answerContent.innerHTML = `<p>에러: ${err.message}</p>`;
