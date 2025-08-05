@@ -7,8 +7,6 @@
     - [x] AI는 잘못된 정보나 오래된 정보를 제공할 수 있습니다.
     - [x] AI의 답변보다는 함께 제공되는 `Reference`를 참고하세요.
 
-<br>
-
 <div id="question-box" style="margin-top: 1em; margin-bottom: 1em;">
   <label for="user-question" style="display: block; margin-bottom: 6px;">
     <strong>질문을 입력하세요:</strong>
