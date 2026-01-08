@@ -1,5 +1,15 @@
-# 03. 제어문
+# 03. 제어문 (Control Flow)
 
-- Conditional Statements (if, else if, switch)
-- Loop Statements (for, while, foreach)
-- Jump Statements (break, continue, return)
+컴퓨터 프로그램은 기본적으로 위에서 아래로 한 줄씩 실행됩니다. 하지만 모든 상황에서 코드가 순차적으로만 실행된다면, 복잡한 게임 로직을 구현하는 것은 불가능에 가깝습니다.
+
+**제어문**은 이러한 코드의 실행 흐름을 우리가 원하는 대로 조절할 수 있게 해주는 도구입니다.
+
+---
+
+!!! success "학습 목표"
+
+    이 챕터에서는 로직의 핵심이 되는 세 가지 흐름 제어 방식을 배웁니다.
+    
+    1. **조건문 (Conditional Statements)**: `if`, `switch` 등을 사용하여 특정 조건이 만족될 때만 코드를 실행하는 방법을 배웁니다.
+    2. **반복문 (Loop Statements)**: `for`, `while`, `foreach`를 사용하여 대량의 데이터를 효율적으로 처리하는 방법을 배웁니다.
+    3. **분기문 (Jump Statements)**: `break`, `continue`, `return`을 사용하여 실행 중인 흐름을 즉시 끊거나 다음으로 넘기는 방법을 배웁니다.
